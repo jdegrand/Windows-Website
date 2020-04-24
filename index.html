@@ -26,7 +26,7 @@
       <li><a>Contact</a></li>
     </ul>
   </div>
-  <div style="background-image: url('bliss.jpg');
+  <div id="screen" style="background-image: url('bliss.jpg');
   background-size: cover;
   position: relative;
   padding: 10px;
@@ -76,11 +76,11 @@
 
 <script>
   var currentIndex = 5;
-  dragElement(document.getElementById("about"), "about");
-  dragElement(document.getElementById("camagatchi"), "camagatchi");
+  dragElement(document.getElementById("about"));
+  dragElement(document.getElementById("camagatchi"));
 
   window.onload = function () {
-    console.log(document.getElementById("about").clientWidth);
+    // console.log(document.getElementById("about").clientWidth);
     document.getElementById("camagatchi").style.left = document.getElementById("about").offsetWidth + 10 + "px";
   };
 
@@ -94,13 +94,21 @@
   }
 
   function bringToFront(id) {
+    // printRect();
     document.getElementById(id).style.zIndex = currentIndex;
     currentIndex += 1;
   }
 
   function bringElementToFront(elmnt) {
+    printRect();
     elmnt.style.zIndex = currentIndex;
     currentIndex += 1;
+  }
+
+  function printRect() {
+    console.log("hit");
+    var points = document.getElementById("screen").getBoundingClientRect();
+    console.log(points.top, points.left);
   }
 </script>
 </html>

@@ -35,10 +35,22 @@ function dragElement(elmnt) {
     pos3 = e.clientX;
     pos4 = e.clientY;
     // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    var boundRect = document.getElementById("screen").getBoundingClientRect();
+    console.log("Left", boundRect.left, "Right", boundRect.right, "Top", boundRect.top, "Bottom", boundRect.bottom)
+    console.log("Width", elmnt.offsetWidth);
+    console.log("Right", elmnt.style.right)
+    if ((elmnt.offsetTop - pos2) >= boundRect.top) {
+      if (elmnt.offsetTop - pos2 + elmnt.offsetHeight <= boundRect.bottom) {
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+      }
+    }
+    console.log(elmnt.offsetLeft - pos1 + elmnt.offsetWidth, boundRect.right, elmnt.offsetWidth);
+    if ((elmnt.offsetLeft - pos1) >= boundRect.top) {
+      if (elmnt.offsetLeft - pos1 + elmnt.offsetWidth <= boundRect.right) {
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+      }
+    }
   }
-
   function closeDragElement() {
     /* stop moving when mouse button is released:*/
     document.onmouseup = null;
