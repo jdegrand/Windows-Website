@@ -1,0 +1,29 @@
+#wrapper {
+    width: 200px;
+    border: 1px solid black;
+}
+#first {
+    width: 300px;
+    float:left; /* add this */
+    border: 1px solid red;
+}
+#second {
+    border: 1px solid green;
+    overflow: hidden; /* if you don't want #second to wrap below #first */
+}
+
+#container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    border: 1px solid red;
+}
+.icon {
+    border: 1px solid green;
+    float:left;
+}
+.icon-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

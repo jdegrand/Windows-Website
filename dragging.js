@@ -66,11 +66,20 @@
          // set the element's new position:
          elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
          elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        //  elmnt.style.left = 100 * (elmnt.offsetLeft - pos1) / initialScreenSize + "%";
+
        }
      }
    
      function closeDragElement() {
        /* stop moving when mouse button is released:*/
+      //  var rectAbout = document.getElementById("about").getBoundingClientRect();
+      //  var rectCamagatchi = document.getElementById("camagatchi").getBoundingClientRect();
+      //  diff = rectCamagatchi.left - rectAbout.right;
+      //  var rect = elmnt.getBoundingClientRect();
+      //  var percentage = 100 * rect.right / initialScreenSize;
+      //  elmnt.style.right = percentage + "%";
+
        document.onmouseup = null;
        document.onmousemove = null;
      }

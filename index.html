@@ -31,7 +31,7 @@
   flex: 1;
   max-width: calc(100vw - 200px);
   height: 100vh;">
-      <div id="about" class="window draggable_window" style="width: 50%;">
+      <div id="about" class="window draggable_window" style="width: 50%; z-index: 10;">
         <div class="title-bar draggable_bar">
           <div class="title-bar-text">About Me</div>
 
@@ -57,7 +57,7 @@
         </div>
       </div>
 
-      <div id="camagatchi" class="window draggable_window" style="width: 23%;">
+      <div id="camagatchi" class="window draggable_window" style="width: 23%; min-width: 184px;">
         <div class="title-bar draggable_bar">
           <div class="title-bar-text">Project - Camagatchi</div>
           <div class="title-bar-controls">
@@ -79,11 +79,24 @@
 </body>
 
 <script>
-  var currentIndex = 5;
+  var currentIndex = 11;
   dragElement(document.getElementById("about"));
   dragElement(document.getElementById("camagatchi"));
 
   window.onload = function () {
+    // screenWidth = window.innerWidth;
+    initialScreenSize = window.innerWidth;
+
+    aboutRect = document.getElementById("about").getBoundingClientRect();
+    camagatchiRect = document.getElementById("camagatchi").getBoundingClientRect();
+    // var percentage = 100 * aboutRect.right / initialScreenSize;
+    if (document.getElementById("camagatchi").offsetWidth + aboutRect.right <= initialScreenSize) {
+      document.getElementById("camagatchi").style.left = aboutRect.right + "px";
+    } else {
+      document.getElementById("camagatchi").style.left = initialScreenSize - document.getElementById("camagatchi").offsetWidth + "px";
+    }
+    // document.getElementById("camagatchi").style.left = percentage + "%";
+    // resizeFunc();
     // console.log(document.getElementById("about").clientWidth);
     // document.getElementById("camagatchi").style.left = document.getElementById("about").offsetWidth + 10 + "px";
   };
@@ -98,22 +111,37 @@
   }
 
   function bringToFront(id) {
-    // printRect();
     document.getElementById(id).style.zIndex = currentIndex;
     currentIndex += 1;
   }
 
   function bringElementToFront(elmnt) {
-    printRect();
     elmnt.style.zIndex = currentIndex;
     currentIndex += 1;
   }
 
-  function printRect() {
-    console.log("hit");
-    var points = document.getElementById("screen").getBoundingClientRect();
-    console.log(points.top, points.left);
+  document.getElementsByTagName("BODY")[0].onresize = function() {resizeFunc()};
+
+  var screenWidth;
+  var initalScreenSize;
+  var diff;
+  var aboutLeft;
+  var camagatchiLeft;
+
+  function resizeFunc() {
+    console.log(document.getElementById("camagatchi").offsetWidth);
+    // var rectAbout = document.getElementById("about").getBoundingClientRect();
+    // var rectCamagatchi = document.getElementById("camagatchi").getBoundingClientRect();
+    // screenWidth = window.innerWidth;
+    // var percentage = 100 * initalScreenSize / screenWidth;
+    // var toAdd = aboutLeft * percentage / 100;
+    // document.getElementById("camagatchi").style.left = rectAbout.right + toAdd + "px";
+    // diff = recta2.left - recta.right;
+    // rectAbout = document.getElementById("about").getBoundingClientRect();
+    // rectCamagatchi = document.getElementById("camagatchi").getBoundingClientRect();
+    // diff = rectCamagatchi.left - rectAbout.right;
   }
+
 </script>
 
 </html>
