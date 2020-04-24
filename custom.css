@@ -9,11 +9,9 @@
 .files {
     width: 200px;
     top: 0;
-    bottom: 0;
     padding: 8px;
     display: flex;
     align-items: stretch;
     z-index: 10000;
     background-color: #c4c485;
-}
-  
+}  
