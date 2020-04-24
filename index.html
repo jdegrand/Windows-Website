@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="dragging.js"></script>
+
+<head>
+  <title>Joe DeGrand</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.4/build/98.css" />
+  <link rel="stylesheet" href="custom.css">
+</head>
+
+<body>
+  <div style="display: flex;" >
+  <div class="files">
+    <ul class="tree-view" style="width: 100%;">
+      <li onclick="openWindow('about')" style="cursor: pointer;"><a>About Me</a></li>
+      <li>
+        <a>Projects</a>
+        <ul>
+          <li onclick="openWindow('camagatchi')" style="cursor: pointer;"><a>Camagatchi</a></li>
+          <li><a>Joe Flo Party Mo</a></li>
+          <li><a>VlocChain</a></li>
+        </ul>
+      </li>
+      <li><a>About This Site</a></li>
+      <li><a>Contact</a></li>
+    </ul>
+  </div>
+  <div style="background-image: url('bliss.jpg');
+  background-size: cover;
+  position: relative;
+  padding: 10px;
+  flex: 1;
+  height: 100vh;">
+    <div id="about" class="window draggable_window" style="width: 50%;">
+      <div class="title-bar draggable_bar">
+        <div class="title-bar-text">About Me</div>
+
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="closeWindow('about')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <div>
+          <div style="height: 200px; width: 200px; float: left;">
+            <img src="profile.jpeg" width=200 height=200/>
+          </div>
+          <div style="margin-left: 100px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
+            <p style="margin-left: 100px;">Hello! My name is Joe DeGrand. I am a 3rd year computer science student at Rochester Institute of Technology.</p>
+          </div>
+      </div>
+        <section class="field-row" style="justify-content: flex-end; clear: both;">
+          <button onclick="closeWindow('about')">OK</button>
+        </section>
+      </div>
+    </div>
+
+    <div id="camagatchi" class="window draggable_window">
+      <div class="title-bar draggable_bar">
+        <div class="title-bar-text">Project - Camagatchi</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="closeWindow('camagatchi')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Camagatchi!</p>
+        <section class="field-row" style="justify-content: flex-end">
+          <button>OK</button>
+          <button>Cancel</button>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+<script>
+  var currentIndex = 5;
+  dragElement(document.getElementById("about"), "about");
+  dragElement(document.getElementById("camagatchi"), "camagatchi");
+
+  window.onload = function () {
+    console.log(document.getElementById("about").clientWidth);
+    document.getElementById("camagatchi").style.left = document.getElementById("about").offsetWidth + 10 + "px";
+  };
+
+  function closeWindow(id) {
+    document.getElementById(id).style.visibility = "hidden";
+  }
+
+  function openWindow(id) {
+    document.getElementById(id).style.visibility = "visible";
+    bringToFront(id);
+  }
+
+  function bringToFront(id) {
+    document.getElementById(id).style.zIndex = currentIndex;
+    currentIndex += 1;
+  }
+
+  function bringElementToFront(elmnt) {
+    elmnt.style.zIndex = currentIndex;
+    currentIndex += 1;
+  }
+</script>
+</html>
