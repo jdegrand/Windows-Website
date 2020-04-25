@@ -3,9 +3,9 @@
 <script type="text/javascript" src="dragging.js"></script>
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
-<script src="jquery.ui.touch-punch.min.js"></script>
+<!-- <script src="jquery.ui.touch-punch.min.js"></script>
 <script>$('.draggable_window').draggable();</script>
-<script>$('#about').draggable();</script>
+<script>$('#about').draggable();</script> -->
 
 <head>
   <title>Joe DeGrand</title>
@@ -39,7 +39,7 @@
   flex: 1;
   max-width: calc(100vw - 200px);
   height: 100vh;">
-      <div id="project_folder" style="width: 100px; text-align: center; touch-action: manipulation;" ondblclick="showProjects()">
+      <div id="project_folder" style="width: 100px; text-align: center; touch-action: manipulation;" onclick="doubleTap()">
         <img src="folder.png" height=75 width=75 />
         <label style="font-size: 16px;">Projects</label>
       </div>
@@ -229,6 +229,38 @@
       currentIndex += 1;
     }
   }
+
+// From Stack Overflow
+var lastTap;
+function doubleTap() {
+   var currentTap = new Date().getTime();
+   var timeDiff = currentTap - lastTap;
+   if ((timeDiff < 400) && (timeDiff > 0)) {
+      showProjects();
+   }
+   lastTap = new Date().getTime();
+}
+
+document.getElementById('about').addEventListener('touchmove', touchDrag, false);
+function touchDrag(event) {
+  // If there's exactly one finger inside this element
+  if (event.targetTouches.length == 1) {
+    var touch = event.targetTouches[0];
+    // Place element where the finger is
+
+    var newLeft = touch.pageX ;
+    var newTop = touch.pageY;
+
+    if (newLeft - 216 < viewport.left
+           || newTop < viewport.top
+           || newLeft + (event.target.offsetWidth / 2) > viewport.right
+           || newTop + (event.target.offsetHeight / 2) > viewport.bottom
+       ) {
+    event.target.left = touch.pageX + 'px';
+    event.target.top = touch.pageY + 'px';
+    }
+  }
+}
 
 </script>
 
