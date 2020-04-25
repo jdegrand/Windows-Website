@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html>
 <script type="text/javascript" src="dragging.js"></script>
-<script src="js/noBounce.js" type="text/javascript"></script>
+<script src="jquery-3.4.1.min.js"></script>
 
+<script>
+$(document).bind(
+   'touchmove',
+   function(e) {
+     e.preventDefault();
+   }
+);
+</script>
 
 <head>
   <title>Joe DeGrand</title>
@@ -145,10 +153,6 @@
 </body>
 
 <script>
-  noBounce.init({
-    animate: true
-  });
-
   var currentIndex = 11;
   var initialScreenSize;
   var initialScreenSizeHeight;
