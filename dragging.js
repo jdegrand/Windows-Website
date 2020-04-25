@@ -22,6 +22,9 @@
      } else {
        /* otherwise, move the DIV from anywhere inside the DIV:*/
        elmnt.onmousedown = dragMouseDown;
+       elmnt.addEventListener("touchstart", dragMouseDown, false);
+       elmnt.addEventListener("touchmove", elementDrag, false);
+       elmnt.addEventListener("touchend", closeDragElement, false);
      }
    
      function dragMouseDown(e) {
