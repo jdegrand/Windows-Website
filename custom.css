@@ -24,7 +24,7 @@ html, body {
 body {
   position: relative;
   overflow: auto;
-  position: 100%;
+  width: 100%;
   -webkit-touch-callout: none;
   -webkit-text-size-adjust: none;
   -webkit-user-select: none;
