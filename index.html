@@ -155,12 +155,19 @@
   var projects = [document.getElementById("camagotchi"), document.getElementById("vlocchain"), document.getElementById("quotebot")];
 
   // document.getElementsByTagName("BODY")[0].onresize = function() {resizeFunc()};
+  var about = document.getElementById("about");
+  var camagotchi = document.getElementById("camagotchi");
+  var vlocchain = document.getElementById("vlocchain");
+  var quotebot = document.getElementById("quotebot");
 
-  dragElement(document.getElementById("about"));
-  dragElement(document.getElementById("camagotchi"));
-  dragElement(document.getElementById("vlocchain"));
-  dragElement(document.getElementById("quotebot"));
-
+  dragElement(about);
+  dragElement(camagotchi);
+  dragElement(vlocchain);
+  dragElement(quotebot);
+  about.addEventListener('touchmove', function(event) { dragWindow(event);}, false);
+  camagotchi.addEventListener('touchmove', function(event) { dragWindow(event);}, false);
+  vlocchain.addEventListener('touchmove', function(event) { dragWindow(event);}, false);
+  quotebot.addEventListener('touchmove', function(event) { dragWindow(event);}, false);
 
   window.onload = function () {
     // screenWidth = window.innerWidth;
@@ -269,9 +276,6 @@ function touchDrag(event) {
 document.body.addEventListener('touchmove', function(event) {
   event.preventDefault();
 }, false); 
-
-var obj = document.getElementById('camagotchi');
-obj.addEventListener('touchmove', function(event) { dragWindow(event);}, false);
 
 function dragWindow(event) {
   // If there's exactly one finger inside this element
