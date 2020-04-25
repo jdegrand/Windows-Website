@@ -20,7 +20,7 @@ $(document).bind(
 </head>
 
 <body style="margin:0; padding:0;">
-  <div style="display: flex; ">
+  <div style="display: flex; height: 100%;">
     <div class="files">
       <ul class="tree-view" style="width: 100%; font-size:calc(12px + 0.5vw);">
         <li onclick="openWindow('about')" style="cursor: pointer;"><a>About Me</a></li>
@@ -42,8 +42,8 @@ $(document).bind(
     <div id="screen" style="background-image: url('bliss.jpg');
   background-size: cover;
   flex: 1;
-  max-width: calc(100vw - 200px);
-  height: 100vh;">
+  height: 100%;
+  max-width: calc(100vw - 200px);">
       <div id="project_folder" style="width: 100px; text-align: center; touch-action: manipulation;" onclick="doubleTap()">
         <img src="folder.png" height=75 width=75 />
         <label style="font-size: 16px;">Projects</label>
@@ -178,7 +178,7 @@ $(document).bind(
     initialScreenSize = window.innerWidth;
     initialScreenSizeHeight = window.innerHeight;
 
-    document.getElementById("screen").style.height = initialScreenSizeHeight;
+    // document.getElementById("screen").style.height = initialScreenSizeHeight;
 
     document.getElementById("about").style.left = "230px";
     document.getElementById("about").style.top = "26px";
