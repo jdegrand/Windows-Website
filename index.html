@@ -163,7 +163,6 @@
   dragElement(camagotchi);
   dragElement(vlocchain);
   dragElement(quotebot);
-  about.addEventListener('touchforcechange', function(event) { dragWindow(event);}, false);
   about.addEventListener('touchmove', function(event) { dragWindow(event);}, false);
   camagotchi.addEventListener('touchmove', function(event) { dragWindow(event);}, false);
   vlocchain.addEventListener('touchmove', function(event) { dragWindow(event);}, false);
@@ -262,14 +261,14 @@ function dragWindow(event) {
     var newLeft = touch.pageX ;
     var newTop = touch.pageY;
 
-      // if (!(newLeft - 216 < viewport.left
-      //      || newTop < viewport.top
-      //      || newLeft + (event.target.offsetWidth / 2) > viewport.right
-      //      || newTop + (event.target.offsetHeight / 2) > viewport.bottom
-      //  )) {
+      if (!(newLeft - 216 < viewport.left
+           || newTop < viewport.top
+           || newLeft + (event.target.offsetWidth / 2) > viewport.right
+           || newTop + (event.target.offsetHeight / 2) > viewport.bottom
+       )) {
           event.target.style.left = touch.pageX + 'px';
           event.target.style.top = touch.pageY + 'px';
-      //  }
+       }
   }
 }
 
