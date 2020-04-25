@@ -42,7 +42,6 @@ $(document).bind(
     <div id="screen" style="background-image: url('bliss.jpg');
   background-size: cover;
   flex: 1;
-  height: 100%;
   max-width: calc(100vw - 200px);">
       <div id="project_folder" style="width: 100px; text-align: center; touch-action: manipulation;" onclick="doubleTap()">
         <img src="folder.png" height=75 width=75 />
@@ -168,6 +167,11 @@ $(document).bind(
   dragElement(camagotchi);
   dragElement(vlocchain);
   dragElement(quotebot);
+  about.addEventListener('touchstart', function(event) { dragWindow(event);}, false);
+  camagotchi.addEventListener('touchstart', function(event) { dragWindow(event);}, false);
+  vlocchain.addEventListener('touchstart', function(event) { dragWindow(event);}, false);
+  quotebot.addEventListener('touchstart', function(event) { dragWindow(event);}, false);
+
   about.addEventListener('touchmove', function(event) { dragWindow(event);}, false);
   camagotchi.addEventListener('touchmove', function(event) { dragWindow(event);}, false);
   vlocchain.addEventListener('touchmove', function(event) { dragWindow(event);}, false);
