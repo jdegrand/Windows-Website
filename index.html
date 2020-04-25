@@ -277,11 +277,7 @@ obj.addEventListener('touchmove', function(event) {
     var newLeft = touch.pageX ;
     var newTop = touch.pageY;
 
-    if (newLeft - 216 < 0
-           || newTop < 0
-           || newLeft + (obj.offsetWidth / 2) > initialScreenSize
-           || newTop + (obj.offsetHeight / 2) > initialScreenSizeHeight
-       ) {
+    if (newLeft - 216 < 0) {
     obj.style.left = touch.pageX + 'px';
     obj.style.top = touch.pageY + 'px';
        }
