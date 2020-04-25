@@ -18,12 +18,19 @@
 }
 
 html, body {
-  overflow: hidden;
   height: 100%;
- 
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
 }
 
 body {
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
   position: relative;
   -webkit-touch-callout: none;
   -webkit-text-size-adjust: none;
