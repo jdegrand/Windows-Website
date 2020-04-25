@@ -253,7 +253,7 @@ function touchDrag(event) {
     var newLeft = touch.pageX ;
     var newTop = touch.pageY;
 
-document.getElementById('test').innerHTML = newLeft;
+    document.getElementById('test').innerHTML = newLeft;
 
     // if (newLeft - 216 < viewport.left
     //        || newTop < viewport.top
@@ -278,11 +278,12 @@ obj.addEventListener('touchmove', function(event) {
     // Place element where the finger is
     var newLeft = touch.pageX ;
     var newTop = touch.pageY;
+    document.getElementById('test').innerHTML = newLeft;
 
-    if (newLeft - 216 < 0) {
+    // if (newLeft - 216 < 0) {
     obj.style.left = touch.pageX + 'px';
     obj.style.top = touch.pageY + 'px';
-       }
+      //  }
   }
 }, false);
 
