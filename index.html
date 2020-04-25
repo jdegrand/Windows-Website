@@ -17,9 +17,10 @@
         <li>
           <a onclick="showProjects()" style="cursor: pointer;">Projects</a>
           <ul>
-            <li onclick="openWindow('camagotchi')" style="cursor: pointer;"><a>camagotchi</a></li>
+            <li onclick="openWindow('camagotchi')" style="cursor: pointer;"><a>Camagotchi</a></li>
             <li><a>Joe Flo Party Mo</a></li>
             <li onclick="openWindow('vlocchain')" style="cursor: pointer;"><a>VlocChain</a></li>
+            <li onclick="openWindow('quotebot')" style="cursor: pointer;"><a>QuoteBot</a></li>
           </ul>
         </li>
         <li><a>About This Site</a></li>
@@ -33,11 +34,10 @@
   flex: 1;
   max-width: calc(100vw - 200px);
   height: 100vh;">
-  <div id="project_folder" style="width: 100px; text-align: center;" ondblclick="showProjects()">
-    <img src="folder.png" height=75 width=75/>
-    <label style="font-size: 16px;">Projects</label>
-  </div>
-  <div style="overflow: hidden;">
+      <div id="project_folder" style="width: 100px; text-align: center;" ondblclick="showProjects()">
+        <img src="folder.png" height=75 width=75 />
+        <label style="font-size: 16px;">Projects</label>
+      </div>
       <div id="about" class="window draggable_window" style="width: 50%; z-index: 10;">
         <div class="title-bar draggable_bar">
           <div class="title-bar-text">About Me</div>
@@ -65,7 +65,7 @@
 
       <div id="camagotchi" class="window draggable_window" style="width: 23%; min-width: 184px;">
         <div class="title-bar draggable_bar">
-          <div class="title-bar-text">Project - camagotchi</div>
+          <div class="title-bar-text">Project - Camagotchi</div>
           <div class="title-bar-controls">
             <button aria-label="Close" onclick="closeWindow('camagotchi')"></button>
           </div>
@@ -75,7 +75,9 @@
             <div style="width: 100%; text-align: center;">
               <img src="camagotchi.png" style="max-width: 80%;" />
             </div>
-            <p>A remake of the famous Tamagotchi toy, the digital pet simulator, written in C. The program utilizes the ncurses and multithreading libraries to recreate this experience. Future plans include 3D printing a case and attaching a screen and buttons to work with the program.</p>
+            <p>A remake of the famous Tamagotchi toy, the digital pet simulator, written in C. The program utilizes the
+              ncurses and multithreading libraries to recreate this experience. Future plans include 3D printing a case
+              and attaching a screen and buttons to work with the program.</p>
             <p>Spring 2019</p>
             <a href="https://github.com/jdegrand/Camagotchi" target="_blank">Github</a>
           </div>
@@ -84,62 +86,93 @@
           </section>
         </div>
       </div>
-    </div>
 
-    <div id="vlocchain" class="window draggable_window" style="width: 25%; z-index: 10;">
-      <div class="title-bar draggable_bar">
-        <div class="title-bar-text">Project - VlocChain</div>
-        <div class="title-bar-controls">
-          <button aria-label="Close" onclick="closeWindow('vlocchain')"></button>
+      <div id="vlocchain" class="window draggable_window" style="width: 25%; min-width: 184px;">
+        <div class="title-bar draggable_bar">
+          <div class="title-bar-text">Project - VlocChain</div>
+          <div class="title-bar-controls">
+            <button aria-label="Close" onclick="closeWindow('vlocchain')"></button>
+          </div>
         </div>
-      </div>
-      <div class="window-body">
-        <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
-          <div style="width: 100%; text-align: center;">
-            <img src="vlocc.png" style="max-width: 80%;" />
-          </div>
-          </div>
+        <div class="window-body">
           <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
-            <p>A project started at a hackathon that two other students and I continued to work on afterward. Utilizes the idea of blockchain technology with video sharing. My part of the project included all of the UI, setting up and using a database with mySQL, Flask API, and creating a custom web video player.</p>
+            <div style="width: 100%; text-align: center;">
+              <img src="vlocc.png" style="max-width: 80%;" />
+            </div>
+            <p>A project started at a hackathon that two other students and I continued to work on afterward. Utilizes
+              the
+              idea of blockchain technology with video sharing. My part of the project included all of the UI, setting
+              up
+              and using a database with mySQL, Flask API, and creating a custom web video player.</p>
             <p>Spring 2018</p>
             <a href="https://github.com/VlocC/VlocChain-0.0" target="_blank">Github</a>
           </div>
+          <section class="field-row" style="justify-content: flex-end">
+            <button onclick="closeWindow('vlocchain')">Sick!</button>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div id="quotebot" class="window draggable_window" style="width: 50%; z-index: 10;">
+      <div class="title-bar draggable_bar">
+        <div class="title-bar-text">Project - QuoteBot</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="closeWindow('quotebot')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <div style="display: flex;">
+          <div style="max-width: 20%; display: flex;
+        justify-content: center; align-items: center;">
+            <img src="telegram_logo.png" style="max-width: 100%; height: auto;
+          width: auto\9;" />
+          </div>
+          <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
+            <p>A bot for the Telegram messaging app that stores quotes, pictures, and other small features. This is connected to public Telegram API and running on a Raspberry Pi.</p>
+            <p>Fall 2018</p>
+            <a href="https://github.com/jdegrand/QuoteBot" target="_blank">Github</a>
+          </div>
         </div>
         <section class="field-row" style="justify-content: flex-end; clear: both;">
-          <button onclick="closeWindow('vlocchain')">Sick!</button>
+          <button onclick="closeWindow('quotebot')">OK</button>
         </section>
       </div>
     </div>
-    </div>
   </div>
-
-  
 </body>
 
 <script>
   var currentIndex = 11;
   var initialScreenSize;
-  var arr = [document.getElementById("about"), document.getElementById("camagotchi"), document.getElementById("vlocchain")];
-  var projects = [document.getElementById("camagotchi"), document.getElementById("vlocchain")];
+  var arr = [document.getElementById("about"), document.getElementById("camagotchi"), document.getElementById("vlocchain"), document.getElementById("quotebot")];
+  var projects = [document.getElementById("camagotchi"), document.getElementById("vlocchain"), document.getElementById("quotebot")];
 
   // document.getElementsByTagName("BODY")[0].onresize = function() {resizeFunc()};
 
   dragElement(document.getElementById("about"));
   dragElement(document.getElementById("camagotchi"));
   dragElement(document.getElementById("vlocchain"));
+  dragElement(document.getElementById("quotebot"));
+
 
   window.onload = function () {
     // screenWidth = window.innerWidth;
     initialScreenSize = window.innerWidth;
 
+    document.getElementById("about").style.left = "230px";
+    document.getElementById("about").style.top = "26px";
     var aboutRect = document.getElementById("about").getBoundingClientRect();
-    var camagotchiRect = document.getElementById("camagotchi").getBoundingClientRect();
     if (document.getElementById("camagotchi").offsetWidth + aboutRect.right <= initialScreenSize) {
-      document.getElementById("camagotchi").style.left = aboutRect.right + "px";
+      document.getElementById("camagotchi").style.left = aboutRect.right + 10 + "px";
     } else {
       document.getElementById("camagotchi").style.left = initialScreenSize - document.getElementById("camagotchi").offsetWidth + "px";
     }
-    document.getElementById("vlocchain").style.left = aboutRect.right + "px";
+    var camagotchiRect = document.getElementById("camagotchi").getBoundingClientRect();
+    document.getElementById("vlocchain").style.left = camagotchiRect.left + "px";
+    document.getElementById("vlocchain").style.top = camagotchiRect.top + 20 + "px";
+    document.getElementById("quotebot").style.left = camagotchiRect.left + "px";
+    document.getElementById("quotebot").style.top = camagotchiRect.top + 40 + "px";
 
   };
 
@@ -166,12 +199,12 @@
 
   function sortBySize(x, y) {
     if ((x.offsetWidth * x.offsetHeight) < (y.offsetWidth * y.offsetHeight)) {
-        return 1;
+      return 1;
     }
     if ((x.offsetWidth * x.offsetHeight) > (y.offsetWidth * y.offsetHeight)) {
-        return -1;
+      return -1;
     }
-      return 0;
+    return 0;
   }
 
   function showAll() {
@@ -184,7 +217,7 @@
   }
 
   function showProjects() {
-    arr.sort(sortBySize);
+    projects.sort(sortBySize);
     for (const elm of projects) {
       elm.style.zIndex = currentIndex;
       elm.style.visibility = "visible"

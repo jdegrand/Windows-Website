@@ -4,7 +4,7 @@
 
 .draggable_window {
     position: absolute;
-    font-size: calc(12px + 0.5vw);
+    font-size: calc(12px + 0.5vh);
 }
 
 .files {
