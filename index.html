@@ -80,7 +80,7 @@
             <div style="width: 100%; text-align: center;">
               <img src="camagotchi.png" style="max-width: 80%;" />
             </div>
-            <p>A remake of the famous Tamagotchi toy, the digital pet simulator, written in C. The program utilizes the
+            <p id="test">A remake of the famous Tamagotchi toy, the digital pet simulator, written in C. The program utilizes the
               ncurses and multithreading libraries to recreate this experience. Future plans include 3D printing a case
               and attaching a screen and buttons to work with the program.</p>
             <p>Spring 2019</p>
@@ -253,14 +253,16 @@ function touchDrag(event) {
     var newLeft = touch.pageX ;
     var newTop = touch.pageY;
 
-    if (newLeft - 216 < viewport.left
-           || newTop < viewport.top
-           || newLeft + (event.target.offsetWidth / 2) > viewport.right
-           || newTop + (event.target.offsetHeight / 2) > viewport.bottom
-       ) {
+document.getElementById('test').innerHTML = newLeft;
+
+    // if (newLeft - 216 < viewport.left
+    //        || newTop < viewport.top
+    //        || newLeft + (event.target.offsetWidth / 2) > viewport.right
+    //        || newTop + (event.target.offsetHeight / 2) > viewport.bottom
+    //    ) {
     event.target.left = touch.pageX + 'px';
     event.target.top = touch.pageY + 'px';
-    }
+    // }
   }
 }
 
