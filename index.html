@@ -271,7 +271,8 @@ document.body.addEventListener('touchmove', function(event) {
 }, false); 
 
 var obj = document.getElementById('camagotchi');
-obj.addEventListener('touchmove', dragWindow(event), false);
+obj.addEventListener('touchmove', function(event) { dragWindow(event);}, false);
+
 function dragWindow(event) {
   // If there's exactly one finger inside this element
   if (event.targetTouches.length == 1) {
@@ -290,6 +291,7 @@ function dragWindow(event) {
        }
   }
 }
+
 </script>
 
 </html>
