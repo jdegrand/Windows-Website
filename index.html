@@ -275,14 +275,14 @@ obj.addEventListener('touchmove', function(event) {
     var newLeft = touch.pageX ;
     var newTop = touch.pageY;
 
-    if (newLeft - 216 < viewport.left
-           || newTop < viewport.top
-           || newLeft + (obj.offsetWidth / 2) > viewport.right
-           || newTop + (obj.offsetHeight / 2) > viewport.bottom
-       ) {
+    // if (newLeft - 216 < viewport.left
+    //        || newTop < viewport.top
+    //        || newLeft + (obj.offsetWidth / 2) > viewport.right
+    //        || newTop + (obj.offsetHeight / 2) > viewport.bottom
+    //    ) {
     obj.style.left = touch.pageX + 'px';
     obj.style.top = touch.pageY + 'px';
-       }
+      //  }
   }
 }, false);
 
