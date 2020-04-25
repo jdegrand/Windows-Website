@@ -15,4 +15,8 @@
     align-items: stretch;
     z-index: 10000;
     background-color: #c4c485;
-}  
+}
+
+html, body {
+  overflow-x:hidden 
+}
