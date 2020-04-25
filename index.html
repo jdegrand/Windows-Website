@@ -150,6 +150,7 @@
 <script>
   var currentIndex = 11;
   var initialScreenSize;
+  var initialScreenSizeHeight;
   var arr = [document.getElementById("about"), document.getElementById("camagotchi"), document.getElementById("vlocchain"), document.getElementById("quotebot")];
   var projects = [document.getElementById("camagotchi"), document.getElementById("vlocchain"), document.getElementById("quotebot")];
 
@@ -164,6 +165,7 @@
   window.onload = function () {
     // screenWidth = window.innerWidth;
     initialScreenSize = window.innerWidth;
+    initialScreenSizeHeight = window.innerHeight;
 
     document.getElementById("about").style.left = "230px";
     document.getElementById("about").style.top = "26px";
@@ -275,14 +277,14 @@ obj.addEventListener('touchmove', function(event) {
     var newLeft = touch.pageX ;
     var newTop = touch.pageY;
 
-    // if (newLeft - 216 < viewport.left
-    //        || newTop < viewport.top
-    //        || newLeft + (obj.offsetWidth / 2) > viewport.right
-    //        || newTop + (obj.offsetHeight / 2) > viewport.bottom
-    //    ) {
+    if (newLeft - 216 < 0
+           || newTop < 0
+           || newLeft + (obj.offsetWidth / 2) > initialScreenSize
+           || newTop + (obj.offsetHeight / 2) > initialScreenSizeHeight
+       ) {
     obj.style.left = touch.pageX + 'px';
     obj.style.top = touch.pageY + 'px';
-      //  }
+       }
   }
 }, false);
 
