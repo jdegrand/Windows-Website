@@ -1,38 +1,32 @@
 .draggable_bar {
   cursor: move;
 }
-
+  
 .draggable_window {
-    position: absolute;
-    font-size: calc(12px + 0.5vh);
+  font-size: calc(12px + 0.5vh);
+  touch-action: none;
+  user-select: none;
+  position: absolute;
+  -webkit-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
 }
-
-.files {
-    width: 200px;
-    top: 0;
-    padding: 8px;
-    display: flex;
-    align-items: stretch;
-    z-index: 10000;
-    background-color: #c4c485;
-}
-
-html, body {
-  height: 100%;
-}
-
-html {
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  overflow: hidden;
-}
-
-body {
-  -webkit-overflow-scrolling: touch;
-  width: 100%;
-  position: relative;
-  -webkit-touch-callout: none;
-  -webkit-text-size-adjust: none;
-  -webkit-user-select: none;  
-}
+  
+  .files {
+      width: 200px;
+      top: 0;
+      padding: 8px;
+      display: flex;
+      align-items: stretch;
+      z-index: 10000;
+      background-color: #c4c485;
+  }
+  
+  html, body {
+      overflow: hidden;
+      height: 100%;
+  }
+  
+  body {
+      padding: 0;
+      margin: 0; 
+  }

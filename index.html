@@ -1,293 +1,279 @@
 <!DOCTYPE html>
 <html>
-<script type="text/javascript" src="dragging.js"></script>
-<script src="jquery-3.4.1.min.js"></script>
-
-<script>
-// $(document).bind(
-//    'touchmove',
-//    function(e) {
-//      e.preventDefault();
-//    }
-// );
-</script>
+<script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/98.css@0.1.4/build/98.css" />
+<link rel="stylesheet" href="custom.css">
 
 <head>
-  <title>Joe DeGrand</title>
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.4/build/98.css" />
-  <link rel="stylesheet" href="custom.css">
+    <title>Joe DeGrand</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.4/build/98.css" />
 </head>
 
-<body style="margin:0; padding:0;">
-  <div style="display: flex; height: 100%;">
-    <div class="files">
-      <ul class="tree-view" style="width: 100%; font-size:calc(12px + 0.5vw);">
-        <li onclick="openWindow('about')" style="cursor: pointer;"><a>About Me</a></li>
-        <li>
-          <a onclick="showProjects()" style="cursor: pointer;">Projects</a>
-          <ul>
-            <li onclick="openWindow('camagotchi')" style="cursor: pointer;"><a>Camagotchi</a></li>
-            <li><a>Joe Flo Party Mo</a></li>
-            <li onclick="openWindow('vlocchain')" style="cursor: pointer;"><a>VlocChain</a></li>
-            <li onclick="openWindow('quotebot')" style="cursor: pointer;"><a>QuoteBot</a></li>
-          </ul>
-        </li>
-        <li><a>About This Site</a></li>
-        <li><a>Contact</a></li>
-        <li><a style="color: white; visibility: hidden;">Easter Egg ;)</a></li>
-        <li><a onclick="showAll()" style="cursor: pointer; color: darkred;">Show All</a></li>
-      </ul>
-    </div>
-    <div id="screen" style="background-image: url('bliss.jpg');
-  background-size: cover;
-  flex: 1;
-  max-width: calc(100vw - 200px);">
-      <div id="project_folder" style="width: 100px; text-align: center; touch-action: manipulation;" onclick="doubleTap()">
-        <img src="folder.png" height=75 width=75 />
-        <label style="font-size: 16px;">Projects</label>
-      </div>
-      <div id="about" class="window draggable_window" style="width: 50%; z-index: 10;">
-        <div class="title-bar draggable_bar">
-          <div class="title-bar-text">About Me</div>
-          <div class="title-bar-controls">
-            <button aria-label="Close" onclick="closeWindow('about')"></button>
-          </div>
+<body>
+    <div style="display: flex; height: 100%; width: 100%;">
+        <div class="files">
+            <ul class="tree-view" style="width: 100%; font-size:calc(12px + 0.5vw);">
+                <li onclick="openWindow('about')" style="cursor: pointer;"><a>About Me</a></li>
+                <li>
+                    <a onclick="showProjects()" style="cursor: pointer;">Projects</a>
+                    <ul>
+                        <li onclick="openWindow('camagotchi')" style="cursor: pointer;"><a>Camagotchi</a></li>
+                        <li><a>Joe Flo Party Mo</a></li>
+                        <li onclick="openWindow('vlocchain')" style="cursor: pointer;"><a>VlocChain</a></li>
+                        <li onclick="openWindow('quotebot')" style="cursor: pointer;"><a>QuoteBot</a></li>
+                    </ul>
+                </li>
+                <li><a>About This Site</a></li>
+                <li><a>Contact</a></li>
+                <li><a style="color: white; visibility: hidden;">Easter Egg ;)</a></li>
+                <li><a onclick="hideAll()" style="cursor: pointer; color: darkred;">Hide All</a></li>
+                <li><a onclick="showAll()" style="cursor: pointer; color: darkred;">Show All</a></li>
+            </ul>
         </div>
-        <div class="window-body">
-          <div style="display: flex;">
-            <div style="max-width: 33%; display: flex;
-          justify-content: center; align-items: center;">
-              <img src="profile.jpeg" style="max-width: 100%; height: auto;
-            width: auto\9;" />
+        <div id="screen"
+            style="background-image: url('bliss.jpg'); background-size: cover; flex: 1; max-width: calc(100vw - 200px); position: relative;">
+            <div id="project_folder" style="width: 100px; text-align: center;">
+                <img src="folder.png" height=75 width=75 />
+                <label style="font-size: 16px;">Projects</label>
             </div>
-            <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
-              <p>Hello! My name is Joe DeGrand. I am a 3rd year computer science student at Rochester Institute of
-                Technology.</p>
+            <div id="about" class="window draggable draggable_window" style="width: 50%; z-index: 10;">
+                <div class="title-bar draggable_bar">
+                    <div class="title-bar-text">About Me</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" onclick="closeWindow('about')"></button>
+                    </div>
+                </div>
+                <div class="window-body">
+                    <div style="display: flex;">
+                        <div style="max-width: 33%; display: flex; justify-content: center; align-items: center;">
+                            <img src="profile.jpeg" style="max-width: 100%; height: auto; width: auto\9;" />
+                        </div>
+                        <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
+                            <p>Hello! My name is Joe DeGrand. I am a 3rd year computer science student at Rochester
+                                Institute of
+                                Technology.</p>
+                        </div>
+                    </div>
+                    <section class="field-row" style="justify-content: flex-end; clear: both;">
+                        <button onclick="closeWindow('about')">OK</button>
+                    </section>
+                </div>
             </div>
-          </div>
-          <section class="field-row" style="justify-content: flex-end; clear: both;">
-            <button onclick="closeWindow('about')">OK</button>
-          </section>
-        </div>
-      </div>
+            <div id="camagotchi" class="window draggable draggable_window" style="width: 23%; min-width: 184px;">
+                <div class="title-bar draggable_bar">
+                    <div class="title-bar-text">Project - Camagotchi</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" onclick="closeWindow('camagotchi')"></button>
+                    </div>
+                </div>
+                <div class="window-body">
+                    <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
+                        <div style="width: 100%; text-align: center;">
+                            <img src="camagotchi.png" style="max-width: 80%;" />
+                        </div>
+                        <p id="test">A remake of the famous Tamagotchi toy, the digital pet simulator, written in C. The
+                            program utilizes the
+                            ncurses and multithreading libraries to recreate this experience. Future plans include 3D
+                            printing a case
+                            and attaching a screen and buttons to work with the program.</p>
+                        <p>Spring 2019</p>
+                        <a href="https://github.com/jdegrand/Camagotchi" target="_blank">Github</a>
+                    </div>
+                    <section class="field-row" style="justify-content: flex-end">
+                        <button onclick="closeWindow('camagotchi')">Cool</button>
+                    </section>
+                </div>
+            </div>
 
-      <div id="camagotchi" class="window draggable_window" style="width: 23%; min-width: 184px;">
-        <div class="title-bar draggable_bar">
-          <div class="title-bar-text">Project - Camagotchi</div>
-          <div class="title-bar-controls">
-            <button aria-label="Close" onclick="closeWindow('camagotchi')"></button>
-          </div>
-        </div>
-        <div class="window-body">
-          <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
-            <div style="width: 100%; text-align: center;">
-              <img src="camagotchi.png" style="max-width: 80%;" />
+            <div id="vlocchain" class="window draggable draggable_window" style="width: 25%; min-width: 184px;">
+                <div class="title-bar draggable_bar">
+                    <div class="title-bar-text">Project - VlocChain</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" onclick="closeWindow('vlocchain')"></button>
+                    </div>
+                </div>
+                <div class="window-body">
+                    <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
+                        <div style="width: 100%; text-align: center;">
+                            <img src="vlocc.png" style="max-width: 80%;" />
+                        </div>
+                        <p>A project started at a hackathon that two other students and I continued to work on
+                            afterward. Utilizes
+                            the
+                            idea of blockchain technology with video sharing. My part of the project included all of the
+                            UI, setting
+                            up
+                            and using a database with mySQL, Flask API, and creating a custom web video player.</p>
+                        <p>Spring 2018</p>
+                        <a href="https://github.com/VlocC/VlocChain-0.0" target="_blank">Github</a>
+                    </div>
+                    <section class="field-row" style="justify-content: flex-end">
+                        <button onclick="closeWindow('vlocchain')">Sick!</button>
+                    </section>
+                </div>
             </div>
-            <p id="test">A remake of the famous Tamagotchi toy, the digital pet simulator, written in C. The program utilizes the
-              ncurses and multithreading libraries to recreate this experience. Future plans include 3D printing a case
-              and attaching a screen and buttons to work with the program.</p>
-            <p>Spring 2019</p>
-            <a href="https://github.com/jdegrand/Camagotchi" target="_blank">Github</a>
-          </div>
-          <section class="field-row" style="justify-content: flex-end">
-            <button onclick="closeWindow('camagotchi')">Cool</button>
-          </section>
-        </div>
-      </div>
 
-      <div id="vlocchain" class="window draggable_window" style="width: 25%; min-width: 184px;">
-        <div class="title-bar draggable_bar">
-          <div class="title-bar-text">Project - VlocChain</div>
-          <div class="title-bar-controls">
-            <button aria-label="Close" onclick="closeWindow('vlocchain')"></button>
-          </div>
-        </div>
-        <div class="window-body">
-          <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
-            <div style="width: 100%; text-align: center;">
-              <img src="vlocc.png" style="max-width: 80%;" />
+            <div id="quotebot" class="window draggable draggable_window" style="width: 50%; z-index: 10;">
+                <div class="title-bar draggable_bar">
+                    <div class="title-bar-text">Project - QuoteBot</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" onclick="closeWindow('quotebot')"></button>
+                    </div>
+                </div>
+                <div class="window-body">
+                    <div style="display: flex;">
+                        <div style="max-width: 20%; display: flex; justify-content: center; align-items: center;">
+                            <img src="telegram_logo.png" style="max-width: 100%; height: auto; width: auto\9;" />
+                        </div>
+                        <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
+                            <p>A bot for the Telegram messaging app that stores quotes, pictures, and other small
+                                features.
+                                This is connected to public Telegram API and running on a Raspberry Pi.</p>
+                            <p>Fall 2018</p>
+                            <a href="https://github.com/jdegrand/QuoteBot" target="_blank">Github</a>
+                        </div>
+                    </div>
+                    <section class="field-row" style="justify-content: flex-end; clear: both;">
+                        <button onclick="closeWindow('quotebot')">OK</button>
+                    </section>
+                </div>
             </div>
-            <p>A project started at a hackathon that two other students and I continued to work on afterward. Utilizes
-              the
-              idea of blockchain technology with video sharing. My part of the project included all of the UI, setting
-              up
-              and using a database with mySQL, Flask API, and creating a custom web video player.</p>
-            <p>Spring 2018</p>
-            <a href="https://github.com/VlocC/VlocChain-0.0" target="_blank">Github</a>
-          </div>
-          <section class="field-row" style="justify-content: flex-end">
-            <button onclick="closeWindow('vlocchain')">Sick!</button>
-          </section>
         </div>
-      </div>
-    </div>
-
-    <div id="quotebot" class="window draggable_window" style="width: 50%; z-index: 10;">
-      <div class="title-bar draggable_bar">
-        <div class="title-bar-text">Project - QuoteBot</div>
-        <div class="title-bar-controls">
-          <button aria-label="Close" onclick="closeWindow('quotebot')"></button>
-        </div>
-      </div>
-      <div class="window-body">
-        <div style="display: flex;">
-          <div style="max-width: 20%; display: flex;
-        justify-content: center; align-items: center;">
-            <img src="telegram_logo.png" style="max-width: 100%; height: auto;
-          width: auto\9;" />
-          </div>
-          <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
-            <p>A bot for the Telegram messaging app that stores quotes, pictures, and other small features. This is connected to public Telegram API and running on a Raspberry Pi.</p>
-            <p>Fall 2018</p>
-            <a href="https://github.com/jdegrand/QuoteBot" target="_blank">Github</a>
-          </div>
-        </div>
-        <section class="field-row" style="justify-content: flex-end; clear: both;">
-          <button onclick="closeWindow('quotebot')">OK</button>
-        </section>
-      </div>
-    </div>
-  </div>
 </body>
 
 <script>
-  var currentIndex = 11;
-  var initialScreenSize;
-  var initialScreenSizeHeight;
-  var arr = [document.getElementById("about"), document.getElementById("camagotchi"), document.getElementById("vlocchain"), document.getElementById("quotebot")];
-  var projects = [document.getElementById("camagotchi"), document.getElementById("vlocchain"), document.getElementById("quotebot")];
+    var currentIndex = 11;
+    var initialScreenSize;
+    var initialScreenSizeHeight;
+    var arr = [document.getElementById("about"), document.getElementById("camagotchi"), document.getElementById("vlocchain"), document.getElementById("quotebot")];
+    var projects = [document.getElementById("camagotchi"), document.getElementById("vlocchain"), document.getElementById("quotebot")];
 
-  var about = document.getElementById("about");
-  var camagotchi = document.getElementById("camagotchi");
-  var vlocchain = document.getElementById("vlocchain");
-  var quotebot = document.getElementById("quotebot");
+    window.onload = function () {
+        initialScreenSize = window.innerWidth;
+        initialScreenSizeHeight = window.innerHeight;
 
-  dragElement(about);
-  dragElement(camagotchi);
-  dragElement(vlocchain);
-  dragElement(quotebot);
-  about.addEventListener('touchstart', function(event) { dragWindow(event);}, false);
-  camagotchi.addEventListener('touchstart', function(event) { dragWindow(event);}, false);
-  vlocchain.addEventListener('touchstart', function(event) { dragWindow(event);}, false);
-  quotebot.addEventListener('touchstart', function(event) { dragWindow(event);}, false);
+        // document.getElementById("about").style.left = "230px";
+        document.getElementById("about").style.top = "26px";
+        var aboutRect = document.getElementById("about").getBoundingClientRect();
+        if (document.getElementById("camagotchi").offsetWidth + aboutRect.right <= initialScreenSize) {
+            document.getElementById("camagotchi").style.left = aboutRect.right + 10 + "px";
+        } else {
+            document.getElementById("camagotchi").style.left = initialScreenSize - document.getElementById("camagotchi").offsetWidth + "px";
+        }
+        var camagotchiRect = document.getElementById("camagotchi").getBoundingClientRect();
+        document.getElementById("vlocchain").style.left = aboutRect.right + 10 + "px";
+        document.getElementById("vlocchain").style.top = camagotchiRect.top + 20 + "px";
+        document.getElementById("quotebot").style.left = aboutRect.right + 10 + "px";
+        document.getElementById("quotebot").style.top = camagotchiRect.top + 40 + "px";
 
-  about.addEventListener("webkitmouseforcedown", function(event) { dragWindow(event);}, false);
-  camagotchi.addEventListener("webkitmouseforcedown", function(event) { dragWindow(event);}, false);
-  vlocchain.addEventListener("webkitmouseforcedown", function(event) { dragWindow(event);}, false);
-  quotebot.addEventListener("webkitmouseforcedown", function(event) { dragWindow(event);}, false);
+    };
 
-  about.addEventListener('touchmove', function(event) { dragWindow(event);}, false);
-  camagotchi.addEventListener('touchmove', function(event) { dragWindow(event);}, false);
-  vlocchain.addEventListener('touchmove', function(event) { dragWindow(event);}, false);
-  quotebot.addEventListener('touchmove', function(event) { dragWindow(event);}, false);
-
-  window.onload = function () {
-    // screenWidth = window.innerWidth;
-    initialScreenSize = window.innerWidth;
-    initialScreenSizeHeight = window.innerHeight;
-
-    // document.getElementById("screen").style.height = initialScreenSizeHeight;
-
-    document.getElementById("about").style.left = "230px";
-    document.getElementById("about").style.top = "26px";
-    var aboutRect = document.getElementById("about").getBoundingClientRect();
-    if (document.getElementById("camagotchi").offsetWidth + aboutRect.right <= initialScreenSize) {
-      document.getElementById("camagotchi").style.left = aboutRect.right + 10 + "px";
-    } else {
-      document.getElementById("camagotchi").style.left = initialScreenSize - document.getElementById("camagotchi").offsetWidth + "px";
+    function closeWindow(id) {
+        document.getElementById(id).style.visibility = "hidden";
     }
-    var camagotchiRect = document.getElementById("camagotchi").getBoundingClientRect();
-    document.getElementById("vlocchain").style.left = camagotchiRect.left + "px";
-    document.getElementById("vlocchain").style.top = camagotchiRect.top + 20 + "px";
-    document.getElementById("quotebot").style.left = camagotchiRect.left + "px";
-    document.getElementById("quotebot").style.top = camagotchiRect.top + 40 + "px";
 
-  };
-
-  function closeWindow(id) {
-    console.log("Array", arr);
-
-    document.getElementById(id).style.visibility = "hidden";
-  }
-
-  function openWindow(id) {
-    document.getElementById(id).style.visibility = "visible";
-    bringToFront(id);
-  }
-
-  function bringToFront(id) {
-    document.getElementById(id).style.zIndex = currentIndex;
-    currentIndex += 1;
-  }
-
-  function bringElementToFront(elmnt) {
-    elmnt.style.zIndex = currentIndex;
-    currentIndex += 1;
-  }
-
-  function sortBySize(x, y) {
-    if ((x.offsetWidth * x.offsetHeight) < (y.offsetWidth * y.offsetHeight)) {
-      return 1;
+    function openWindow(id) {
+        document.getElementById(id).style.visibility = "visible";
+        bringToFront(id);
     }
-    if ((x.offsetWidth * x.offsetHeight) > (y.offsetWidth * y.offsetHeight)) {
-      return -1;
+
+    function bringToFront(id) {
+        document.getElementById(id).style.zIndex = currentIndex;
+        currentIndex += 1;
     }
-    return 0;
-  }
 
-  function showAll() {
-    arr.sort(sortBySize);
-    for (const elm of arr) {
-      elm.style.zIndex = currentIndex;
-      elm.style.visibility = "visible"
-      currentIndex += 1;
+    function bringElementToFront(elmnt) {
+        elmnt.style.zIndex = currentIndex;
+        currentIndex += 1;
     }
-  }
 
-  function showProjects() {
-    projects.sort(sortBySize);
-    for (const elm of projects) {
-      elm.style.zIndex = currentIndex;
-      elm.style.visibility = "visible"
-      currentIndex += 1;
+    function sortBySize(x, y) {
+        if ((x.offsetWidth * x.offsetHeight) < (y.offsetWidth * y.offsetHeight)) {
+            return 1;
+        }
+        if ((x.offsetWidth * x.offsetHeight) > (y.offsetWidth * y.offsetHeight)) {
+            return -1;
+        }
+        return 0;
     }
-  }
 
-// From Stack Overflow
-var lastTap;
-function doubleTap() {
-   var currentTap = new Date().getTime();
-   var timeDiff = currentTap - lastTap;
-   if ((timeDiff < 400) && (timeDiff > 0)) {
-      showProjects();
-   }
-   lastTap = new Date().getTime();
-}
+    function showAll() {
+        arr.sort(sortBySize);
+        for (const elm of arr) {
+            elm.style.zIndex = currentIndex;
+            elm.style.visibility = "visible"
+            currentIndex += 1;
+        }
+    }
 
-document.body.addEventListener('touchmove', function(event) {
-  event.preventDefault();
-}, false); 
+    function hideAll() {
+        for (const elm of arr) {
+            elm.style.visibility = "hidden"
+        }
+    }
 
-function dragWindow(event) {
-  // If there's exactly one finger inside this element
-  if (event.targetTouches.length == 1) {
-    var touch = event.targetTouches[0];
-    // Place element where the finger is
-    var newLeft = touch.pageX ;
-    var newTop = touch.pageY;
+    function showProjects() {
+        projects.sort(sortBySize);
+        for (const elm of projects) {
+            elm.style.zIndex = currentIndex;
+            elm.style.visibility = "visible"
+            currentIndex += 1;
+        }
+    }
 
-      if (!(newLeft - 216 < viewport.left
-           || newTop < viewport.top
-           || newLeft + (event.target.offsetWidth / 2) > viewport.right
-           || newTop + (event.target.offsetHeight / 2) > viewport.bottom
-       )) {
-          event.target.style.left = touch.pageX + 'px';
-          event.target.style.top = touch.pageY + 'px';
-       }
-  }
-}
+    interact('.draggable')
+        .draggable({
+            modifiers: [
+                interact.modifiers.restrictRect({
+                    restriction: 'parent',
+                    elementRect: { left: 0, right: 0.5, top: 0, bottom: 0.5 },
+                    endOnly: false
+                })
+            ],
+            autoScroll: true,
 
+            listeners: {
+                // call this function on every dragmove event
+                move: dragMoveListener,
+
+                // call this function on every dragend event
+                end(event) {
+
+                }
+            }
+        })
+
+    function dragMoveListener(event) {
+        var target = event.target
+        // keep the dragged position in the data-x/data-y attributes
+        var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
+        var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
+
+        // translate the element
+        target.style.webkitTransform =
+            target.style.transform =
+            'translate(' + x + 'px, ' + y + 'px)'
+
+        // update the posiion attributes
+        target.setAttribute('data-x', x)
+        target.setAttribute('data-y', y)
+    }
+
+    // this function is used later in the resizing and gesture demos
+    window.dragMoveListener = dragMoveListener
+
+    interact('#project_folder')
+        .on('tap', function (event) {
+            event.preventDefault()
+        })
+        .on('doubletap', function (event) {
+            showProjects()
+            event.preventDefault()
+        })
+        .on('hold', function (event) {
+
+        })
 </script>
 
 </html>
