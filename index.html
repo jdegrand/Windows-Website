@@ -266,14 +266,25 @@ document.body.addEventListener('touchmove', function(event) {
   event.preventDefault();
 }, false); 
 
+document.body.addEventListener("touchstart", function(event) { e.returnValue = false });
+
 var obj = document.getElementById('camagotchi');
 obj.addEventListener('touchmove', function(event) {
   // If there's exactly one finger inside this element
   if (event.targetTouches.length == 1) {
     var touch = event.targetTouches[0];
     // Place element where the finger is
+    var newLeft = touch.pageX ;
+    var newTop = touch.pageY;
+
+    if (newLeft - 216 < viewport.left
+           || newTop < viewport.top
+           || newLeft + (obj.offsetWidth / 2) > viewport.right
+           || newTop + (obj.offsetHeight / 2) > viewport.bottom
+       ) {
     obj.style.left = touch.pageX + 'px';
     obj.style.top = touch.pageY + 'px';
+       }
   }
 }, false);
 
