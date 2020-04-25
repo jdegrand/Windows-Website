@@ -6,6 +6,7 @@
 <script src="jquery.ui.touch-punch.min.js"></script>
 <script>$('.draggable_window').draggable();</script>
 <script>$('#about').draggable();</script>
+
 <head>
   <title>Joe DeGrand</title>
   <meta charset="UTF-8" />
@@ -38,7 +39,7 @@
   flex: 1;
   max-width: calc(100vw - 200px);
   height: 100vh;">
-      <div id="project_folder" style="width: 100px; text-align: center;" ondblclick="showProjects()">
+      <div id="project_folder" style="width: 100px; text-align: center; touch-action: manipulation;" ondblclick="showProjects()">
         <img src="folder.png" height=75 width=75 />
         <label style="font-size: 16px;">Projects</label>
       </div>
