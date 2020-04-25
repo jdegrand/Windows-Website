@@ -163,6 +163,7 @@
   dragElement(camagotchi);
   dragElement(vlocchain);
   dragElement(quotebot);
+  about.addEventListener('touchstart', function(event) { dragWindow(event);}, false);
   about.addEventListener('touchmove', function(event) { dragWindow(event);}, false);
   camagotchi.addEventListener('touchmove', function(event) { dragWindow(event);}, false);
   vlocchain.addEventListener('touchmove', function(event) { dragWindow(event);}, false);
