@@ -154,7 +154,6 @@
   var arr = [document.getElementById("about"), document.getElementById("camagotchi"), document.getElementById("vlocchain"), document.getElementById("quotebot")];
   var projects = [document.getElementById("camagotchi"), document.getElementById("vlocchain"), document.getElementById("quotebot")];
 
-  // document.getElementsByTagName("BODY")[0].onresize = function() {resizeFunc()};
   var about = document.getElementById("about");
   var camagotchi = document.getElementById("camagotchi");
   var vlocchain = document.getElementById("vlocchain");
@@ -250,29 +249,6 @@ function doubleTap() {
    lastTap = new Date().getTime();
 }
 
-document.getElementById('about').addEventListener('touchmove', touchDrag, false);
-function touchDrag(event) {
-  // If there's exactly one finger inside this element
-  if (event.targetTouches.length == 1) {
-    var touch = event.targetTouches[0];
-    // Place element where the finger is
-
-    var newLeft = touch.pageX ;
-    var newTop = touch.pageY;
-
-    document.getElementById('test').innerHTML = newLeft;
-
-    // if (newLeft - 216 < viewport.left
-    //        || newTop < viewport.top
-    //        || newLeft + (event.target.offsetWidth / 2) > viewport.right
-    //        || newTop + (event.target.offsetHeight / 2) > viewport.bottom
-    //    ) {
-    event.target.left = touch.pageX + 'px';
-    event.target.top = touch.pageY + 'px';
-    // }
-  }
-}
-
 document.body.addEventListener('touchmove', function(event) {
   event.preventDefault();
 }, false); 
@@ -285,14 +261,14 @@ function dragWindow(event) {
     var newLeft = touch.pageX ;
     var newTop = touch.pageY;
 
-      if (!(newLeft - 216 < viewport.left
-           || newTop < viewport.top
-           || newLeft + (event.target.offsetWidth / 2) > viewport.right
-           || newTop + (event.target.offsetHeight / 2) > viewport.bottom
-       )) {
+      // if (!(newLeft - 216 < viewport.left
+      //      || newTop < viewport.top
+      //      || newLeft + (event.target.offsetWidth / 2) > viewport.right
+      //      || newTop + (event.target.offsetHeight / 2) > viewport.bottom
+      //  )) {
           event.target.style.left = touch.pageX + 'px';
           event.target.style.top = touch.pageY + 'px';
-       }
+      //  }
   }
 }
 
