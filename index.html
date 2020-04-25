@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="custom.css">
 </head>
 
-<body style="margin:0; padding:0;">
+<body style="margin:0; padding:0; overflow: hidden;">
   <div style="display: flex;">
     <div class="files">
       <ul class="tree-view" style="width: 100%; font-size:calc(12px + 0.5vw);">
@@ -37,6 +37,7 @@
     <img src="folder.png" height=75 width=75/>
     <label style="font-size: 16px;">Projects</label>
   </div>
+  <div style="overflow: hidden;">
       <div id="about" class="window draggable_window" style="width: 50%; z-index: 10;">
         <div class="title-bar draggable_bar">
           <div class="title-bar-text">About Me</div>
@@ -108,6 +109,7 @@
           <button onclick="closeWindow('vlocchain')">Sick!</button>
         </section>
       </div>
+    </div>
     </div>
   </div>
 

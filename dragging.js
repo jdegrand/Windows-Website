@@ -1,4 +1,4 @@
-/* The following code is from W3 Schools and Stack Overflow, with slight modifications by me
+/* The following code is from W3 Schools and Stack Overflow, with some slight modifications by me
    https://www.w3schools.com/howto/howto_js_draggable.asp */
 
    var PADDING = 0;
@@ -58,8 +58,8 @@
    
        if (newLeft - 216 < viewport.left
            || newTop < viewport.top
-           || newLeft + rect.width > viewport.right
-           || newTop + rect.height > viewport.bottom
+           || newLeft + (rect.width / 2) > viewport.right
+           || newTop + (rect.height / 2) > viewport.bottom
        ) {
          // the element will hit the boundary, do nothing...
        } else {
