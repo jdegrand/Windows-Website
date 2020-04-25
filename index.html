@@ -178,6 +178,8 @@ $(document).bind(
     initialScreenSize = window.innerWidth;
     initialScreenSizeHeight = window.innerHeight;
 
+    document.getElementById("screen").style.height = initialScreenSizeHeight;
+
     document.getElementById("about").style.left = "230px";
     document.getElementById("about").style.top = "26px";
     var aboutRect = document.getElementById("about").getBoundingClientRect();
