@@ -13,21 +13,30 @@
 }
 
 .files {
-    width: 200px;
-    top: 0;
-    padding: 8px;
-    display: flex;
-    align-items: stretch;
-    z-index: 10000;
-    background-color: #c4c485;
+  width: 200px;
+  top: 0;
+  padding: 8px;
+  display: flex;
+  align-items: stretch;
+  z-index: 10000;
+  background-color: #c4c485;
 }
 
 html, body {
-    overflow: hidden;
-    height: 100%;
+  overflow: hidden;
+  height: 100%;
 }
 
 body {
-    padding: 0;
-    margin: 0; 
+  padding: 0;
+  margin: 0; 
+  cursor: url("mouse_default.png"), default;
+}
+
+.pointer_cursor {
+  cursor: url('mouse_pointer.png'), pointer;
+}
+
+button {
+  cursor: url("mouse_default.png"), default;
 }

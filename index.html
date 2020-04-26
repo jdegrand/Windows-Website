@@ -21,28 +21,28 @@
     <div style="display: flex; height: 100%; width: 100%;">
         <div class="files">
             <ul class="tree-view" style="width: 100%; font-size:calc(12px + 0.5vw);">
-                <li onclick="openWindow('about')" style="cursor: pointer;"><a>About Me</a></li>
+                <li class="pointer_cursor" onclick="openWindow('about')"><a>About Me</a></li>
                 <li>
-                    <a onclick="showProjects()" style="cursor: pointer;">Projects</a>
+                    <a class="pointer_cursor" onclick="showProjects()">Projects</a>
                     <ul>
-                        <li onclick="openWindow('camagotchi')" style="cursor: pointer;"><a>Camagotchi</a></li>
+                        <li class="pointer_cursor" onclick="openWindow('camagotchi')"><a>Camagotchi</a></li>
                         <li><a>Joe Flo Party Mo</a></li>
-                        <li onclick="openWindow('vlocchain')" style="cursor: pointer;"><a>VlocChain</a></li>
-                        <li onclick="openWindow('quotebot')" style="cursor: pointer;"><a>QuoteBot</a></li>
+                        <li class="pointer_cursor" onclick="openWindow('vlocchain')"><a>VlocChain</a></li>
+                        <li class="pointer_cursor" onclick="openWindow('quotebot')"><a>QuoteBot</a></li>
                     </ul>
                 </li>
                 <li><a>About This Site</a></li>
                 <li><a>Contact</a></li>
                 <li><a style="color: white; visibility: hidden;">Easter Egg ;)</a></li>
-                <li><a onclick="hideAll()" style="cursor: pointer; color: darkred;">Hide All</a></li>
-                <li><a onclick="showAll()" style="cursor: pointer; color: darkred;">Show All</a></li>
+                <li><a class="pointer_cursor" onclick="hideAll()" style="color: darkred;">Hide All</a></li>
+                <li><a class="pointer_cursor" onclick="showAll()" style="color: darkred;">Show All</a></li>
             </ul>
         </div>
         <div id="screen"
             style="background-image: url('bliss.jpg'); background-size: cover; flex: 1; max-width: calc(100vw - 200px);">
-            <div id="project_folder" class="click_projects" style="width: 100px; text-align: center; cursor: pointer;   touch-action: manipulation;" onclick="prevDefault(event)">
+            <div id="project_folder" class="click_projects pointer_cursor" style="width: 100px; text-align: center; touch-action: manipulation;" onclick="prevDefault(event)">
                 <img src="folder.png" height=75 width=75 />
-                <label style="font-size: 16px;">Projects</label>
+                <label class="pointer_cursor" style="font-size: 16px;">Projects</label>
             </div>
             <div id="about" class="window draggable draggable_window" style="width: 50%; z-index: 10;">
                 <div class="title-bar draggable_bar">
