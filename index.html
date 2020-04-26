@@ -7,6 +7,11 @@
 <head>
     <title>Joe DeGrand</title>
     <meta charset="UTF-8" />
+    <meta property="og:title" content="Joey DeGrand" />
+    <meta property="og:description" content="An old fashion windows themed website with information about me." />
+    <meta property=”og:url” content=”jdegrand.me” />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://image.thum.io/get/ogImage/jdegrand.me" />
     <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.4/build/98.css" />
 </head>
 
@@ -32,8 +37,8 @@
             </ul>
         </div>
         <div id="screen"
-            style="background-image: url('bliss.jpg'); background-size: cover; flex: 1; max-width: calc(100vw - 200px); position: relative;">
-            <div id="project_folder" style="width: 100px; text-align: center;">
+            style="background-image: url('bliss.jpg'); background-size: cover; flex: 1; max-width: calc(100vw - 200px);">
+            <div id="project_folder" class="click_projects" style="width: 100px; text-align: center; cursor: pointer;">
                 <img src="folder.png" height=75 width=75 />
                 <label style="font-size: 16px;">Projects</label>
             </div>
@@ -155,18 +160,9 @@
 
         // document.getElementById("about").style.left = "230px";
         document.getElementById("about").style.top = "26px";
-        var aboutRect = document.getElementById("about").getBoundingClientRect();
-        if (document.getElementById("camagotchi").offsetWidth + aboutRect.right <= initialScreenSize) {
-            document.getElementById("camagotchi").style.left = aboutRect.right + 10 + "px";
-        } else {
-            document.getElementById("camagotchi").style.left = initialScreenSize - document.getElementById("camagotchi").offsetWidth + "px";
-        }
-        var camagotchiRect = document.getElementById("camagotchi").getBoundingClientRect();
-        document.getElementById("vlocchain").style.left = aboutRect.right + 10 + "px";
-        document.getElementById("vlocchain").style.top = camagotchiRect.top + 20 + "px";
-        document.getElementById("quotebot").style.left = aboutRect.right + 10 + "px";
-        document.getElementById("quotebot").style.top = camagotchiRect.top + 40 + "px";
+        document.getElementById("camagotchi").style.left = document.getElementById("about").getBoundingClientRect().right +"px";
 
+        
     };
 
     function closeWindow(id) {
@@ -222,12 +218,18 @@
         }
     }
 
+    function getBoundries(x, y, element) {
+      var end = window.innerWidth;
+      var height = window.innerHeight;
+      return {left: 216, right: end, top: 0, bottom: height}
+    }
+
     interact('.draggable')
         .draggable({
             modifiers: [
                 interact.modifiers.restrictRect({
-                    restriction: 'parent',
-                    elementRect: { left: 0, right: 0.5, top: 0, bottom: 0.5 },
+                    restriction: getBoundries,
+                    elementRect: { left: 0, right: 1, top: 0, bottom: 0.5 },
                     endOnly: false
                 })
             ],
@@ -243,9 +245,16 @@
                 }
             }
         })
+        .styleCursor(false)
+        .on('tap', function (event) {
+          bringElementToFront(event.currentTarget)
+          event.preventDefault()
+
+        })
 
     function dragMoveListener(event) {
         var target = event.target
+        bringElementToFront(target)
         // keep the dragged position in the data-x/data-y attributes
         var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
         var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
@@ -262,8 +271,9 @@
 
     // this function is used later in the resizing and gesture demos
     window.dragMoveListener = dragMoveListener
+        
 
-    interact('#project_folder')
+    interact('.click_projects')
         .on('tap', function (event) {
             event.preventDefault()
         })
