@@ -23,8 +23,9 @@
 }
 
 html, body {
-  overflow: hidden;
+  overflow: auto;
   height: 100%;
+  -webkit-overflow-scrolling: touch
 }
 
 body {
