@@ -21,14 +21,14 @@
     <div style="display: flex; height: 100%; width: 100%;">
         <div class="files">
             <ul class="tree-view" style="width: 100%; font-size:calc(12px + 0.5vw); position: relative;">
-                <li class="pointer_cursor" onclick="openWindow('about')" ondblclick="reposition('about')"><a>About Me</a></li>
+                <li data-windowid="about" class="window_title pointer_cursor" onclick="prevDefault(event)"><a>About Me</a></li>
                 <li>
                     <a class="pointer_cursor" onclick="showProjects()">Projects</a>
                     <ul>
-                        <li class="pointer_cursor" onclick="openWindow('camagotchi')" ondblclick="reposition('camagotchi')"><a>Camagotchi</a></li>
+                        <li data-windowid="camagotchi" class="window_title pointer_cursor" onclick="prevDefault(event)"><a>Camagotchi</a></li>
                         <li><a>Joe Flo Party Mo</a></li>
-                        <li class="pointer_cursor" onclick="openWindow('vlocchain')" ondblclick="reposition('vlocchain')" ><a>VlocChain</a></li>
-                        <li class="pointer_cursor" onclick="openWindow('quotebot')" ondblclick="reposition('quotebot')"><a>QuoteBot</a></li>
+                        <li data-windowid="vlocchain" class="window_title pointer_cursor" onclick="prevDefault(event)"><a>VlocChain</a></li>
+                        <li data-windowid="quotebot" class="window_title pointer_cursor" onclick="prevDefault(event)"><a>QuoteBot</a></li>
                     </ul>
                 </li>
                 <li><a>Work Experience</a></li>
@@ -300,7 +300,23 @@
 
         })
 
+    interact('.window_title')
+        .on('tap', function (event) {
+            openWindow(event.currentTarget.dataset.windowid);
+            event.preventDefault();
+        })
+        .on('doubletap', function (event) {
+            reposition(event.currentTarget.dataset.windowid);
+            event.preventDefault();
+        })
+        .on('hold', function (event) {
+
+        })
+
     function reposition(id) {
+        document.getElementById(id).style.transform = "translate(0px, 0px)";
+        document.getElementById(id).dataset.x = 0;
+        document.getElementById(id).dataset.y = 0;
         document.getElementById(id).style.left = files_list_width + "px";
         document.getElementById(id).style.top = 0 + "px";
     }
