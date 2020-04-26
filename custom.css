@@ -9,24 +9,25 @@
   user-select: none;
   -webkit-transform: translate(0px, 0px);
   transform: translate(0px, 0px);
+  -ms-touch-action: none;
 }
-  
-  .files {
-      width: 200px;
-      top: 0;
-      padding: 8px;
-      display: flex;
-      align-items: stretch;
-      z-index: 10000;
-      background-color: #c4c485;
-  }
-  
-  html, body {
-      overflow: hidden;
-      height: 100%;
-  }
-  
-  body {
-      padding: 0;
-      margin: 0; 
-  }
+
+.files {
+    width: 200px;
+    top: 0;
+    padding: 8px;
+    display: flex;
+    align-items: stretch;
+    z-index: 10000;
+    background-color: #c4c485;
+}
+
+html, body {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0; 
+}

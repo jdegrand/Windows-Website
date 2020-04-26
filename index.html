@@ -40,7 +40,7 @@
         </div>
         <div id="screen"
             style="background-image: url('bliss.jpg'); background-size: cover; flex: 1; max-width: calc(100vw - 200px);">
-            <div id="project_folder" class="click_projects" style="width: 100px; text-align: center; cursor: pointer;">
+            <div id="project_folder" class="click_projects" style="width: 100px; text-align: center; cursor: pointer;   touch-action: manipulation;" onclick="prevDefault(event)">
                 <img src="folder.png" height=75 width=75 />
                 <label style="font-size: 16px;">Projects</label>
             </div>
@@ -162,7 +162,14 @@
 
         // document.getElementById("about").style.left = "230px";
         document.getElementById("about").style.top = "26px";
-        document.getElementById("camagotchi").style.left = document.getElementById("about").getBoundingClientRect().right +"px";
+        document.getElementById("camagotchi").style.left = document.getElementById("about").getBoundingClientRect().left + 50 + "px";
+        document.getElementById("camagotchi").style.top = document.getElementById("about").getBoundingClientRect().bottom + 15 + "px";
+        document.getElementById("vlocchain").style.left = document.getElementById("about").getBoundingClientRect().right + 42 + "px";
+        document.getElementById("vlocchain").style.top = 16 + "px";
+        document.getElementById("quotebot").style.left = document.getElementById("camagotchi").getBoundingClientRect().right + 15 + "px";
+        document.getElementById("quotebot").style.top = document.getElementById("about").getBoundingClientRect().bottom + 100 + "px";
+
+
 
         
     };
@@ -231,11 +238,11 @@
             modifiers: [
                 interact.modifiers.restrictRect({
                     restriction: getBoundries,
-                    elementRect: { left: 0, right: 1, top: 0, bottom: 0.5 },
+                    elementRect: { left: 0, right: 0.5, top: 0, bottom: 0.5 },
                     endOnly: false
                 })
             ],
-            autoScroll: true,
+            autoScroll: false,
 
             listeners: {
                 // call this function on every dragmove event
@@ -273,7 +280,10 @@
 
     // this function is used later in the resizing and gesture demos
     window.dragMoveListener = dragMoveListener
-        
+    
+    function prevDefault(event) {
+        event.preventDefault()
+    }
 
     interact('.click_projects')
         .on('tap', function (event) {
