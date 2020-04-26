@@ -21,7 +21,7 @@
 <body>
     <div style="display: flex; height: 100%; width: 100%;">
         <div class="files">
-            <ul class="tree-view" style="width: 100%; font-size:calc(12px + 0.5vw); position: relative;">
+            <ul class="tree-view" style="width: 100%; font-size:calc(12px + 0.5vh); position: relative; overflow: hidden;">
                 <li data-windowid="about" class="window_title pointer_cursor" onclick="prevDefault(event)"><a>About Me</a></li>
                 <li>
                     <a class="pointer_cursor" onclick="showProjects()">Projects</a>
@@ -33,12 +33,20 @@
                     </ul>
                 </li>
                 <li><a>Work Experience</a></li>
+                <li>
+                    <a class="pointer_cursor">Extracurricular</a>
+                    <ul>
+                        <li><a>CSH</a></li>
+                        <li><a>Orientation Leader</a></li>
+                        <li><a>Intramurals</a></li>
+                    </ul>
+                </li>
                 <li><a>About This Site</a></li>
                 <li><a>Contact</a></li>
                 <li><a style="color: white; visibility: hidden;">Easter Egg ;)</a></li>
                 <li><a class="pointer_cursor" onclick="hideAll()" style="color: darkred;">Hide All</a></li>
-                <li><a class="pointer_cursor" onclick="showAll()" style="color: darkred;">Show All</a></li>
-                <div style="display: flex; justify-content: space-evenly; margin-bottom: auto; position: absolute; width: 100%; bottom: 0; margin-bottom: 10px;">
+                <li id="lastTreeViewElement"><a class="pointer_cursor" onclick="showAll()" style="color: darkred;">Show All</a></li>
+                <div id="social_bar" style="display: flex; justify-content: space-evenly; margin-bottom: auto; position: absolute; width: 100%; bottom: 0; margin-bottom: 10px;">
                     <div onclick="window.open('https://www.linkedin.com/in/joe-degrand', '_blank');"><img class="icon_link pointer_cursor" title="LinkedIn" src="linkedin_logo.png" height=30 /></div>
                     <div onclick="window.open('https://github.com/jdegrand', '_blank');"><img class="icon_link pointer_cursor" title="GitGub" src="github_logo.png" height=30 /></div>
                 </div>
@@ -321,6 +329,19 @@
         document.getElementById(id).style.left = files_list_width + "px";
         document.getElementById(id).style.top = 0 + "px";
     }
+
+
+    window.onresize = checkCollision;
+    function checkCollision() {
+        var t = document.getElementById('lastTreeViewElement').getBoundingClientRect();
+        var s = document.getElementById('social_bar').getBoundingClientRect();
+        if (s.top < t.bottom) {
+            document.getElementById('social_bar').style.visibility = "hidden";
+        } else {
+            document.getElementById('social_bar').style.visibility = "visible";
+        }
+    }
+
 </script>
 
 </html>
