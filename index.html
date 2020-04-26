@@ -20,22 +20,27 @@
 <body>
     <div style="display: flex; height: 100%; width: 100%;">
         <div class="files">
-            <ul class="tree-view" style="width: 100%; font-size:calc(12px + 0.5vw);">
-                <li class="pointer_cursor" onclick="openWindow('about')"><a>About Me</a></li>
+            <ul class="tree-view" style="width: 100%; font-size:calc(12px + 0.5vw); position: relative;">
+                <li class="pointer_cursor" onclick="openWindow('about')" ondblclick="reposition('about')"><a>About Me</a></li>
                 <li>
                     <a class="pointer_cursor" onclick="showProjects()">Projects</a>
                     <ul>
-                        <li class="pointer_cursor" onclick="openWindow('camagotchi')"><a>Camagotchi</a></li>
+                        <li class="pointer_cursor" onclick="openWindow('camagotchi')" ondblclick="reposition('camagotchi')"><a>Camagotchi</a></li>
                         <li><a>Joe Flo Party Mo</a></li>
-                        <li class="pointer_cursor" onclick="openWindow('vlocchain')"><a>VlocChain</a></li>
-                        <li class="pointer_cursor" onclick="openWindow('quotebot')"><a>QuoteBot</a></li>
+                        <li class="pointer_cursor" onclick="openWindow('vlocchain')" ondblclick="reposition('vlocchain')" ><a>VlocChain</a></li>
+                        <li class="pointer_cursor" onclick="openWindow('quotebot')" ondblclick="reposition('quotebot')"><a>QuoteBot</a></li>
                     </ul>
                 </li>
+                <li><a>Work Experience</a></li>
                 <li><a>About This Site</a></li>
                 <li><a>Contact</a></li>
                 <li><a style="color: white; visibility: hidden;">Easter Egg ;)</a></li>
                 <li><a class="pointer_cursor" onclick="hideAll()" style="color: darkred;">Hide All</a></li>
                 <li><a class="pointer_cursor" onclick="showAll()" style="color: darkred;">Show All</a></li>
+                <div style="display: flex; justify-content: space-evenly; margin-bottom: auto; position: absolute; width: 100%; bottom: 0; margin-bottom: 10px;">
+                    <div onclick="window.open('https://www.linkedin.com/in/joe-degrand', '_blank');"><img class="icon_link pointer_cursor" title="LinkedIn" src="linkedin_logo.png" height=30 /></div>
+                    <div onclick="window.open('https://github.com/jdegrand', '_blank');"><img class="icon_link pointer_cursor" title="GitGub" src="github_logo.png" height=30 /></div>
+                </div>
             </ul>
         </div>
         <div id="screen"
@@ -85,7 +90,7 @@
                             printing a case
                             and attaching a screen and buttons to work with the program.</p>
                         <p>Spring 2019</p>
-                        <a href="https://github.com/jdegrand/Camagotchi" target="_blank">Github</a>
+                        <a href="https://github.com/jdegrand/Camagotchi" target="_blank">GitHub</a>
                     </div>
                     <section class="field-row" style="justify-content: flex-end">
                         <button onclick="closeWindow('camagotchi')">Cool</button>
@@ -113,7 +118,7 @@
                             up
                             and using a database with mySQL, Flask API, and creating a custom web video player.</p>
                         <p>Spring 2018</p>
-                        <a href="https://github.com/VlocC/VlocChain-0.0" target="_blank">Github</a>
+                        <a href="https://github.com/VlocC/VlocChain-0.0" target="_blank">GitHub</a>
                     </div>
                     <section class="field-row" style="justify-content: flex-end">
                         <button onclick="closeWindow('vlocchain')">Sick!</button>
@@ -138,7 +143,7 @@
                                 features.
                                 This is connected to public Telegram API and running on a Raspberry Pi.</p>
                             <p>Fall 2018</p>
-                            <a href="https://github.com/jdegrand/QuoteBot" target="_blank">Github</a>
+                            <a href="https://github.com/jdegrand/QuoteBot" target="_blank">GitHub</a>
                         </div>
                     </div>
                     <section class="field-row" style="justify-content: flex-end; clear: both;">
@@ -155,6 +160,8 @@
     var initialScreenSizeHeight;
     var arr = [document.getElementById("about"), document.getElementById("camagotchi"), document.getElementById("vlocchain"), document.getElementById("quotebot")];
     var projects = [document.getElementById("camagotchi"), document.getElementById("vlocchain"), document.getElementById("quotebot")];
+    var files_list_width = 216;
+
 
     window.onload = function () {
         initialScreenSize = window.innerWidth;
@@ -168,10 +175,6 @@
         document.getElementById("vlocchain").style.top = 16 + "px";
         document.getElementById("quotebot").style.left = document.getElementById("camagotchi").getBoundingClientRect().right + 15 + "px";
         document.getElementById("quotebot").style.top = document.getElementById("about").getBoundingClientRect().bottom + 100 + "px";
-
-
-
-        
     };
 
     function closeWindow(id) {
@@ -230,7 +233,7 @@
     function getBoundries(x, y, element) {
       var end = window.innerWidth;
       var height = window.innerHeight;
-      return {left: 216, right: end, top: 0, bottom: height}
+      return {left: files_list_width, right: end, top: 0, bottom: height}
     }
 
     interact('.draggable')
@@ -296,6 +299,11 @@
         .on('hold', function (event) {
 
         })
+
+    function reposition(id) {
+        document.getElementById(id).style.left = files_list_width + "px";
+        document.getElementById(id).style.top = 0 + "px";
+    }
 </script>
 
 </html>
