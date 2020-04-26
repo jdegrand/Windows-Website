@@ -48,3 +48,7 @@ button {
 .icon_link:hover {
   opacity: 100%;
 }
+
+.window_title {
+  touch-action: manipulation;
+}
