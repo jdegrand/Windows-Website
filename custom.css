@@ -127,9 +127,12 @@ label {
     font-size: 10px;
   }
   .window-body {
-    font-size: 10px;
+    font-size: 6px;
   }
   #about {
     width: 25%;
+  }
+  .title-bar-text {
+    font-size: 6px;
   }
 }
