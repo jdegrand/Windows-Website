@@ -25,6 +25,10 @@
   align-items: stretch;
   z-index: 10000;
   background-color: #c4c485;
+  height: 100%;
+}
+
+#files_container {
   height: calc(100% - 16px);
   transition: 1s;
 }
@@ -105,13 +109,12 @@ label {
 }
 
 #drawer_arrow {
+  background-color: lime;
   height: 100%;
   display:table-cell;
   vertical-align: middle;
   text-align: center;
-  opacity: 0.40;
-  visibility: hidden;
-  
+  opacity: 0.40;  
 }
 
 @media screen and (max-width:1000px) {
@@ -124,7 +127,7 @@ label {
 }
 
 @media screen and (max-width:500px) and (orientation:portrait) {
-  #files {
+  #files_container {
     position: absolute;
     width: 100px;
     left: -116px;
