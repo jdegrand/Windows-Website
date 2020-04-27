@@ -54,7 +54,7 @@ button {
 }
 
 .window-body {
-  /* font-size: calc(12px + 0.5vh); */
-  font-size: 1.1vw;
+  font-size: calc((1vh + 1vw)/2);
+  /* font-size: 2vh; */
   /* font-size: 100px; */
 }
