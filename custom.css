@@ -60,6 +60,21 @@ button {
   font-size: 14px;
 }
 
-@media screen and (max-device-width: 500px) and (orientation: portrait){
-  
+.window_horizontal_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.horizontal_window {
+  display: flex;
+}
+
+@media screen and (max-width:1000px) {
+  .window_horizontal_image {
+    width: 60%;
+  }
+  .horizontal_window {
+    flex-wrap: wrap;
+  }
 }
