@@ -116,7 +116,7 @@ label {
 }
 
 #image_arrow {
-  margin-top: calc(50vh - 31px);
+  margin-top: calc(50% - 31px);
 }
 
 @media screen and (max-width:1000px) {
