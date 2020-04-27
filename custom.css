@@ -29,9 +29,10 @@
 }
 
 #files_container {
+  z-index: 10000;
   display: flex;
   height: calc(100% - 16px);
-  transition: 1s;
+  transition: 0.5s;
 }
 
 html, body {
@@ -110,6 +111,7 @@ label {
 }
 
 #drawer_arrow {
+  z-index: 10000;
   height: 100%;
   opacity: 0.40;
   display: none;
