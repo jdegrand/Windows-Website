@@ -393,9 +393,7 @@
 
                 // call this function on every dragend event
                 end(event) {
-                    if (filesOffScreen) {
-                        document.getElementById('files_container').style.opacity = 1;
-                    }
+                    document.getElementById('files_container').style.opacity = 1;
                 }
             }
         })
@@ -417,11 +415,7 @@
         target.style.webkitTransform =
             target.style.transform =
             'translate(' + x + 'px, ' + y + 'px)'
-        if (filesOffScreen) {
-            if (x < 116) {
-                document.getElementById('files_container').style.opacity = 0.25;
-            }
-        }
+        document.getElementById('files_container').style.opacity = 0.25;
         // update the posiion attributes
         target.setAttribute('data-x', x)
         target.setAttribute('data-y', y)
