@@ -132,12 +132,12 @@ label {
   #about {
     /* width: 25%; */
   }
-  .title-bar-text button {
+  .title-bar-text, button {
     font-size: 6px;
   }
 
-  button {
+  /* button {
     min-width: 37.5px;
     min-height: 12.5px;
-  }
+  } */
 }
