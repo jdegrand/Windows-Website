@@ -283,10 +283,12 @@
     var all_windows = [about, camagotchi, vlocchain, quotebot, pixelartwatchos, aboutwebsite];
     var projects = [camagotchi, vlocchain, quotebot, pixelartwatchos];
     var files_list_width;
+    var isMobile = false;
     if (window.innerWidth > 500) {
         files_list_width = 216;
     } else {
         files_list_width = 0;
+        isMobile = true;
     }
 
     window.onorientationchange = function () {
@@ -393,7 +395,9 @@
 
                 // call this function on every dragend event
                 end(event) {
-                    document.getElementById('files_container').style.opacity = 1;
+                    if (isMobile) {
+                        document.getElementById('files_container').style.opacity = 1;
+                    }
                 }
             }
         })
@@ -415,7 +419,9 @@
         target.style.webkitTransform =
             target.style.transform =
             'translate(' + x + 'px, ' + y + 'px)'
-        document.getElementById('files_container').style.opacity = 0.25;
+        if (isMobile) {
+            document.getElementById('files_container').style.opacity = 0.25;
+        }
         // update the posiion attributes
         target.setAttribute('data-x', x)
         target.setAttribute('data-y', y)
