@@ -142,16 +142,16 @@ label {
     flex-wrap: wrap;
   }
 
-  #about {
+  /* #about {
     width: 35%;
   }
 
   #quotebot {
     width: 25%;
-  }
+  } */
 
   #quotebotImage {
-    width: 50%;
+    width: 30%;
   }
 }
 
