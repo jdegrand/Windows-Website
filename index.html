@@ -27,7 +27,7 @@
 <body>
     <div style="overflow: hidden; position: relative; height: 100%;">
     <div style="display: flex; height: 100%; width: 100%;">
-        <div id="files">
+        <div id="files" class="slide_out">
             <ul class="tree-view" id="left_panel">
                 <li data-windowid="about" class="window_title pointer_cursor" onclick="prevDefault(event)"><a>About
                         Me</a></li>
@@ -454,9 +454,18 @@
         }
     }
 
+    var filesOffScreen = true;
+
     interact('#image_arrow')
         .on('tap', function (event) {
-            document.getElementById('files').style.left = 0 + "px";
+            // document.getElementById('files').style.left = 0 + "px";
+            if (filesOffScreen) {
+                document.getElementById('files').className = "slide_in";
+                filesOffScreen = false;
+            } else {
+                document.getElementById('files').className = "slide_out";
+                filesOffScreen = true;
+            }
             event.preventDefault()
         });
 
