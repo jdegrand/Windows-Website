@@ -125,8 +125,9 @@ label {
 
 @media screen and (max-width:500px) and (orientation:portrait) {
   #files {
+    position: absolute;
     width: 100px;
-    height: 100%;
+    left: -116px;
   }
 
   #left_panel {
