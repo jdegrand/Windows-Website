@@ -27,7 +27,7 @@
 <body>
     <div style="overflow: hidden; position: relative; height: 100%;">
     <div style="display: flex; height: 100%; width: 100%;">
-        <div id="files" class="slide_out">
+        <div id="files">
             <ul class="tree-view" id="left_panel">
                 <li data-windowid="about" class="window_title pointer_cursor" onclick="prevDefault(event)"><a>About
                         Me</a></li>
@@ -263,8 +263,8 @@
     var files_list_width;
     if (window.innerWidth > 500) {
         files_list_width = 216;
-    } else if (window.innerHeight <= window.innerWidth) {
-        files_list_width = 116;
+    // } else if (window.innerHeight <= window.innerWidth) {
+    //     files_list_width = 116;
     } else {
         files_list_width = 0;
     }
@@ -458,12 +458,13 @@
 
     interact('#image_arrow')
         .on('tap', function (event) {
-            // document.getElementById('files').style.left = 0 + "px";
+            console.log("test");
+            document.getElementById('files').style.left = 0 + "px";
             if (filesOffScreen) {
-                document.getElementById('files').className = "slide_in";
+                document.getElementById('files').style.left = 0 + "px";
                 filesOffScreen = false;
             } else {
-                document.getElementById('files').className = "slide_out";
+                document.getElementById('files').style.left = -files_list_width + "px";
                 filesOffScreen = true;
             }
             event.preventDefault()
