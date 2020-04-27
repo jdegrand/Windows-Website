@@ -134,19 +134,16 @@ label {
     font-size: 6px;
   }
 
-  button {
-    font-size: 6px;
+  .custom_button {
+    font-size: 8px;
     min-width: 56px; 
     min-height: 17px;
   }
 
-  .test {
-    font-size: 6px;
-    min-width: 56px;
-    min-height: 17px;
-  }
 
-  .title-bar-controls button {
+ 
+
+  .custom_close_button {
     min-width: 7px;
     min-height: 6px
   }
