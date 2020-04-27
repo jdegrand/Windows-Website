@@ -139,4 +139,15 @@ label {
     min-width: 37.5px;
     min-height: 11.5px;
   }
+
+  .test {
+    font-size: 6px;
+    min-width: 37.5px;
+    min-height: 11.5px;
+  }
+
+  .title-bar-controls {
+    min-width: 7px;
+    min-height: 6px
+  }
 }
