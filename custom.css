@@ -112,6 +112,7 @@ label {
 
 @media screen and (max-width:500px) and (orientation:portrait) {
   .files {
+    width: 100px;
     height: 100%;
     position: absolute;
     left: -116px;
