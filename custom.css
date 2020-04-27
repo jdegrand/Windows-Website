@@ -78,6 +78,9 @@ button {
   justify-content: center;
   align-items: center;
 }
+.quotebotImage {
+  width: 50%;
+}
 
 .horizontal_window {
   display: flex;
@@ -121,12 +124,34 @@ label {
   margin-top: calc(40vh);
 }
 
+#quotebot {
+  width: 50%;
+  z-index: 10;;
+}
+
+#quotebotImage {
+  width: 35%;
+}
+
 @media screen and (max-width:1000px) {
-  .window_horizontal_image {
+  #aboutImage {
     width: 60%;
   }
+
   .horizontal_window {
     flex-wrap: wrap;
+  }
+
+  #about {
+    width: 35%;
+  }
+
+  #quotebot {
+    width: 25%;
+  }
+
+  #quotebotImage {
+    width: 50%;
   }
 }
 

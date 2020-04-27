@@ -100,7 +100,7 @@
                     </div>
                     <div class="window-body">
                         <div class="horizontal_window">
-                            <div class="window_horizontal_image">
+                            <div id="aboutImage" class="window_horizontal_image">
                                 <img onclick="prevDefault(event)" src="profile.jpeg"
                                     style="max-width: 100%;" />
                             </div>
@@ -174,7 +174,7 @@
                     </div>
                 </div>
 
-                <div id="quotebot" class="window draggable draggable_window" style="width: 50%; z-index: 10;">
+                <div id="quotebot" class="window draggable draggable_window">
                     <div class="title-bar draggable_bar">
                         <div class="title-bar-text">Project - QuoteBot</div>
                         <div class="title-bar-controls">
@@ -182,9 +182,9 @@
                         </div>
                     </div>
                     <div class="window-body">
-                        <div style="display: flex;">
-                            <div style="max-width: 20%; display: flex; justify-content: center; align-items: center;">
-                                <img src="telegram_logo.png" style="max-width: 100%; height: auto; width: auto\9;" />
+                        <div class="horizontal_window">
+                            <div id="quotebotImage" class="window_horizontal_image">
+                                <img src="telegram_logo.png" style="max-width: 100%;" />
                             </div>
                             <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
                                 <p>A bot for the Telegram messaging app that stores quotes, pictures, and other small
