@@ -61,7 +61,5 @@ button {
 }
 
 @media screen and (max-device-width: 500px) and (orientation: portrait){
-  .files {
-    width: 8px;
-  }
+  
 }
