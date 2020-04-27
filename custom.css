@@ -105,9 +105,9 @@ label {
 #drawer_arrow {
   height: 100vh;
   display:table-cell;
-  vertical-align:middle;
-  opacity: 0.25;
-  visibility: hidden;
+  vertical-align: middle;
+  text-align: center;
+  opacity: 0.40;
 }
 
 @media screen and (max-width:1000px) {
