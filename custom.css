@@ -112,8 +112,9 @@ label {
 
 @media screen and (max-width:500px) and (orientation:portrait) {
   .files {
-    width: 0;
-    visibility: hidden;
+    height: 100%;
+    position: absolute;
+    left: -116px;
   }
 
   #left_panel {
@@ -139,10 +140,7 @@ label {
     font-size: 8px;
     min-width: 56px; 
     min-height: 17px;
-  }
-
-
- 
+  } 
 
   .custom_close_button {
     min-width: 7px;
