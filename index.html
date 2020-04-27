@@ -285,8 +285,6 @@
     var files_list_width;
     if (window.innerWidth > 500) {
         files_list_width = 216;
-        // } else if (window.innerHeight <= window.innerWidth) {
-        //     files_list_width = 116;
     } else {
         files_list_width = 0;
     }
@@ -294,11 +292,10 @@
     window.onorientationchange = function () {
         if (window.innerWidth > 500) {
             files_list_width = 216;
-        } else if (window.innerHeight <= window.innerWidth) {
-            files_list_width = 116;
         } else {
             files_list_width = 0;
         }
+        checkAllWindows();
     }
 
     window.onload = function () {
@@ -462,6 +459,22 @@
         document.getElementById(id).dataset.y = 0;
         document.getElementById(id).style.left = files_list_width + "px";
         document.getElementById(id).style.top = 0 + "px";
+    }
+    
+    function reposition(element) {
+        element.style.transform = "translate(0px, 0px)";
+        element.dataset.x = 0;
+        element.getElementById(id).dataset.y = 0;
+        element.getElementById(id).style.left = files_list_width + "px";
+        element.getElementById(id).style.top = 0 + "px";
+    }
+
+    function checkAllWindows() {
+        for (const elm of all_windows) {
+            if ((elm.style.left > window.innerWidth) || (elm.style.bottom > window.innerHeight)) {
+                repositionElement(elm);
+            }
+        }
     }
 
 
