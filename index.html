@@ -8,7 +8,7 @@
 <head>
     <title>Joey DeGrand</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
     <meta property="og:title" content="Joey DeGrand" />
     <meta property="og:description" content="An old fashion windows themed website with information about me." />
     <meta property=”og:url” content=”https://jdegrand.me” />
@@ -393,7 +393,9 @@
 
                 // call this function on every dragend event
                 end(event) {
-
+                    if (filesOffScreen) {
+                        document.getElementById('files_container').style.opacity = 1;
+                    }
                 }
             }
         })
@@ -415,7 +417,11 @@
         target.style.webkitTransform =
             target.style.transform =
             'translate(' + x + 'px, ' + y + 'px)'
-
+        if (filesOffScreen) {
+            if (x < 116) {
+                document.getElementById('files_container').style.opacity = 0.25;
+            }
+        }
         // update the posiion attributes
         target.setAttribute('data-x', x)
         target.setAttribute('data-y', y)
