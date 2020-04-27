@@ -480,13 +480,12 @@
 
     interact('#image_arrow')
         .on('tap', function (event) {
-            console.log("test");
             document.getElementById('files_container').style.left = 0 + "px";
             if (filesOffScreen) {
                 document.getElementById('files_container').style.left = 0 + "px";
                 filesOffScreen = false;
             } else {
-                document.getElementById('files_container').style.right = 0 + "px";
+                document.getElementById('files_container').style.left = -files_list_width + "px";
                 filesOffScreen = true;
             }
             event.preventDefault()
