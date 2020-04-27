@@ -136,17 +136,17 @@ label {
 
   button {
     font-size: 6px;
-    min-width: 37.5px;
-    min-height: 11.5px;
+    min-width: 56px; 
+    min-height: 17px;
   }
 
   .test {
     font-size: 6px;
-    min-width: 37.5px;
-    min-height: 11.5px;
+    min-width: 56px;
+    min-height: 17px;
   }
 
-  .title-bar-controls {
+  .title-bar-controls button {
     min-width: 7px;
     min-height: 6px
   }
