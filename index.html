@@ -254,12 +254,23 @@
     var all_windows = [about, camagotchi, vlocchain, quotebot, pixelartwatchos, aboutwebsite];
     var projects = [camagotchi, vlocchain, quotebot, pixelartwatchos];
     var files_list_width;
-    if ((window.innerWidth > 500) && (window.innerHeight <= window.innerWidth)) {
+    if (window.innerWidth > 500) {
         files_list_width = 216;
+    } else if (window.innerHeight <= window.innerWidth) {
+        files_list_width = 116;
     } else {
         files_list_width = 0;
     }
 
+    window.onorientationchange = function () {
+        if (window.innerWidth > 500) {
+            files_list_width = 216;
+        } else if (window.innerHeight <= window.innerWidth) {
+            files_list_width = 116;
+        } else {
+            files_list_width = 0;
+        }
+    }
 
     window.onload = function () {
         initialScreenSize = window.innerWidth;
