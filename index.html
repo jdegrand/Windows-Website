@@ -79,7 +79,7 @@
                 <div class="title-bar draggable_bar">
                     <div class="title-bar-text">About Me</div>
                     <div class="title-bar-controls">
-                        <button class="custom_close_button" aria-label="Close" onclick="closeWindow('about')"></button>
+                        <button aria-label="Close" onclick="closeWindow('about')"></button>
                     </div>
                 </div>
                 <div class="window-body">
@@ -124,7 +124,7 @@
                         <a href="https://github.com/jdegrand/Camagotchi" target="_blank">GitHub</a>
                     </div>
                     <section class="field-row" style="justify-content: flex-end">
-                        <button onclick="closeWindow('camagotchi')">Cool</button>
+                        <button class="custom_button" onclick="closeWindow('camagotchi')">Cool</button>
                     </section>
                 </div>
             </div>
@@ -149,7 +149,7 @@
                         <a href="https://github.com/VlocC/VlocChain-0.0" target="_blank">GitHub</a>
                     </div>
                     <section class="field-row" style="justify-content: flex-end">
-                        <button onclick="closeWindow('vlocchain')">Sick!</button>
+                        <button class="custom_button" onclick="closeWindow('vlocchain')">Sick!</button>
                     </section>
                 </div>
             </div>
@@ -174,7 +174,7 @@
                         </div>
                     </div>
                     <section class="field-row" style="justify-content: flex-end; clear: both;">
-                        <button onclick="closeWindow('quotebot')">OK</button>
+                        <button class="custom_button" onclick="closeWindow('quotebot')">OK</button>
                     </section>
                 </div>
             </div>
@@ -200,7 +200,7 @@
                             <a href="https://github.com/jdegrand/PixelArtWatchOS" target="_blank">GitHub</a>
                     </div>
                     <section class="field-row" style="justify-content: flex-end">
-                        <button onclick="closeWindow('pixelartwatchos')">Wow!</button>
+                        <button class="custom_button" onclick="closeWindow('pixelartwatchos')">Wow!</button>
                     </section>
                 </div>
             </div>
@@ -231,7 +231,7 @@
 
                     </div>
                     <section class="field-row" style="justify-content: flex-end; clear: both;">
-                        <button onclick="closeWindow('aboutwebsite')">OK</button>
+                        <button class="custom_button" onclick="closeWindow('aboutwebsite')">OK</button>
                     </section>
                 </div>
             </div>
@@ -257,7 +257,7 @@
     if ((window.innerWidth > 500) && (window.innerHeight <= window.innerWidth)) {
         files_list_width = 216;
     } else {
-        files_list_width = 116;
+        files_list_width = 0;
     }
 
 

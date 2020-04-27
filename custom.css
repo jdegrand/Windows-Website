@@ -112,7 +112,8 @@ label {
 
 @media screen and (max-width:500px) and (orientation:portrait) {
   .files {
-    width: 100px;
+    width: 0;
+    visibility: hidden;
   }
 
   #left_panel {
@@ -127,11 +128,11 @@ label {
     font-size: 10px;
   }
   .window-body {
-    font-size: 6px;
+    font-size: 8px;
   }
 
   .title-bar-text {
-    font-size: 6px;
+    font-size: 8px;
   }
 
   .custom_button {
