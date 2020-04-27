@@ -84,6 +84,16 @@ button {
   max-width: calc(100vw - 200px);
 }
 
+#project_folder {
+  width: 100px;
+  text-align: center;
+  touch-action: manipulation;
+}
+
+label {
+  font-size: 16px;
+}
+
 @media screen and (max-width:1000px) {
   .window_horizontal_image {
     width: 60%;
@@ -103,6 +113,14 @@ button {
   }
 
   #screen {
-    max-width: calc(100vw - 100px);
+    /* max-width: calc(100vw - 100px); */
+  }
+
+  #project_folder {
+    width: 50px;
+  }
+
+  label {
+    font-size: 12px;
   }
 }
