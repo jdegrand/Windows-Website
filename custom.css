@@ -113,7 +113,6 @@ label {
 @media screen and (max-width:500px) and (orientation:portrait) {
   .files {
     width: 100px;
-    padding: 4px;
   }
 
   #left_panel {
