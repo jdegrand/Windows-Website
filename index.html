@@ -27,7 +27,7 @@
 <body>
     <div style="overflow: hidden; position: relative; height: 100%;">
     <div style="display: flex; height: 100%; width: 100%;">
-        <div class="files">
+        <div id="files">
             <ul class="tree-view" id="left_panel">
                 <li data-windowid="about" class="window_title pointer_cursor" onclick="prevDefault(event)"><a>About
                         Me</a></li>
@@ -76,6 +76,9 @@
                 <img src="folder.png" style="height: 100%; width: 100%;" />
                 <label class="pointer_cursor">Projects</label>
             </div>
+            <div id="drawer_arrow">
+                <img id="image_arrow" src="back_arrow.png" width=10 height="20">
+            </div>
             <div id="about" class="window draggable draggable_window">
                 <div class="title-bar draggable_bar">
                     <div class="title-bar-text">About Me</div>
@@ -86,7 +89,7 @@
                 <div class="window-body">
                     <div class="horizontal_window">
                         <div class="window_horizontal_image">
-                            <img src="profile.jpeg" style="max-width: 100%;" />
+                            <img id="arrow_image" onclick="prevDefault(event)" src="profile.jpeg" style="max-width: 100%;" />
                         </div>
                         <div style="margin-left: 10px; padding: 1rem; overflow-wrap: break-word;">
                             <p>Hello! My name is Joey DeGrand. I am a 3rd year computer science student at Rochester
@@ -448,6 +451,12 @@
             document.getElementById('social_bar').style.visibility = "visible";
         }
     }
+
+    interact('.image_arrow')
+        .on('tap', function (event) {
+            document.getElementById('files').style.left = 0 + "px";
+            event.preventDefault()
+        });
 
 </script>
 

@@ -17,7 +17,7 @@
   -ms-touch-action: none;
 }
 
-.files {
+#files {
   width: 200px;
   top: 0;
   padding: 8px;
@@ -93,12 +93,21 @@ button {
 
 #project_folder {
   width: 75px;
+  position: absolute;
   text-align: center;
   touch-action: manipulation;
 }
 
 label {
   font-size: 16px;
+}
+
+#drawer_arrow {
+  height: 100vh;
+  display:table-cell;
+  vertical-align:middle;
+  opacity: 0.25;
+  visibility: hidden;
 }
 
 @media screen and (max-width:1000px) {
@@ -111,7 +120,7 @@ label {
 }
 
 @media screen and (max-width:500px) and (orientation:portrait) {
-  .files {
+  #files {
     width: 100px;
     height: 100%;
     position: absolute;
@@ -147,5 +156,9 @@ label {
   .custom_close_button {
     min-width: 7px;
     min-height: 6px
+  }
+
+  #drawer_arrow {
+    visibility: visible;
   }
 }
