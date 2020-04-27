@@ -109,12 +109,13 @@ label {
 }
 
 #drawer_arrow {
-  background-color: lime;
-  height: 100%;
-  display:table-cell;
-  vertical-align: middle;
-  text-align: center;
-  opacity: 0.40;  
+  height: 100vh;
+  opacity: 0.40;
+  display: none;
+}
+
+#image_arrow {
+  margin-top: calc(50vh - 15px);
 }
 
 @media screen and (max-width:1000px) {
@@ -129,8 +130,11 @@ label {
 @media screen and (max-width:500px) and (orientation:portrait) {
   #files_container {
     position: absolute;
-    width: 100px;
     left: -116px;
+  }
+
+  #files {
+    width: 100px;
   }
 
   #left_panel {
@@ -165,6 +169,6 @@ label {
   }
 
   #drawer_arrow {
-    visibility: visible;
+    display: initial;
   }
 }
