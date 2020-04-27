@@ -130,9 +130,14 @@ label {
     font-size: 6px;
   }
   #about {
-    width: 25%;
+    /* width: 25%; */
   }
-  .title-bar-text {
+  .title-bar-text button {
     font-size: 6px;
+  }
+
+  button {
+    min-width: 37.5px;
+    min-height: 12.5px;
   }
 }
