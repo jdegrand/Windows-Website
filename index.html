@@ -22,7 +22,7 @@
 <body>
     <div style="display: flex; height: 100%; width: 100%;">
         <div class="files">
-            <ul class="tree-view" style="width: 100%; font-size:calc(1.5vw); position: relative; overflow: hidden;">
+            <ul class="tree-view" id="left_panel">
                 <li data-windowid="about" class="window_title pointer_cursor" onclick="prevDefault(event)"><a>About Me</a></li>
                 <li>
                     <a class="pointer_cursor" onclick="showProjects()">Projects</a>
@@ -55,8 +55,7 @@
                 </div>
             </ul>
         </div>
-        <div id="screen"
-            style="background-image: url('bliss.jpg'); background-size: cover; flex: 1; max-width: calc(100vw - 200px);">
+        <div id="screen">
             <div id="project_folder" class="click_projects pointer_cursor" style="width: 100px; text-align: center; touch-action: manipulation;" onclick="prevDefault(event)">
                 <img src="folder.png" height=75 width=75 />
                 <label class="pointer_cursor" style="font-size: 16px;">Projects</label>

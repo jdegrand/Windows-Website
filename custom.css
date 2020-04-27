@@ -70,6 +70,20 @@ button {
   display: flex;
 }
 
+#left_panel {
+  width: 100%;
+  font-size:16px;
+  position: relative;
+  overflow: hidden;
+}
+
+#screen {
+  background-image: url('bliss.jpg');
+  background-size: cover;
+  flex: 1;
+  max-width: calc(100vw - 200px);
+}
+
 @media screen and (max-width:1000px) {
   .window_horizontal_image {
     width: 60%;
@@ -82,5 +96,13 @@ button {
 @media screen and (max-width:500px) and (orientation:portrait) {
   .files {
     width: 100px;
+  }
+
+  #left_panel {
+    font-size: 8px;
+  }
+
+  #screen {
+    max-width: calc(100vw - 200px);
   }
 }
