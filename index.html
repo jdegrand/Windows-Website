@@ -8,7 +8,7 @@
 <head>
     <title>Joey DeGrand</title>
     <meta charset="UTF-8" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:title" content="Joey DeGrand" />
     <meta property="og:description" content="An old fashion windows themed website with information about me." />
     <meta property=”og:url” content=”https://jdegrand.me” />
@@ -225,7 +225,12 @@
 
     var all_windows = [about, camagotchi, vlocchain, quotebot, pixelartwatchos, aboutwebsite];
     var projects = [camagotchi, vlocchain, quotebot, pixelartwatchos];
-    var files_list_width = 216;
+    var files_list_width;
+    if (window.innerWidth > 500) {
+        files_list_width = 216;
+    } else {
+        files_list_width = 116;
+    }
 
 
     window.onload = function () {

@@ -77,4 +77,7 @@ button {
   .horizontal_window {
     flex-wrap: wrap;
   }
+  .files {
+    width: 100px;
+  }
 }
