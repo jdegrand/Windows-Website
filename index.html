@@ -22,7 +22,7 @@
 <body>
     <div style="display: flex; height: 100%; width: 100%;">
         <div class="files">
-            <ul class="tree-view" style="width: 100%; font-size:calc(12px + 0.5vh); position: relative; overflow: hidden;">
+            <ul class="tree-view" style="width: 100%; font-size:calc(1.5vw); position: relative; overflow: hidden;">
                 <li data-windowid="about" class="window_title pointer_cursor" onclick="prevDefault(event)"><a>About Me</a></li>
                 <li>
                     <a class="pointer_cursor" onclick="showProjects()">Projects</a>
@@ -226,7 +226,7 @@
     var all_windows = [about, camagotchi, vlocchain, quotebot, pixelartwatchos, aboutwebsite];
     var projects = [camagotchi, vlocchain, quotebot, pixelartwatchos];
     var files_list_width;
-    if (window.innerWidth > 500) {
+    if ((window.innerWidth > 500) && (window.innerHeight <= window.innerWidth)) {
         files_list_width = 216;
     } else {
         files_list_width = 116;
