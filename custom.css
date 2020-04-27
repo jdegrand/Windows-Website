@@ -1,3 +1,8 @@
+#about {
+  width: 50%;
+  z-index: 10;
+}
+
 .draggable_bar {
   cursor: move;
 }
@@ -68,6 +73,8 @@ button {
 
 .horizontal_window {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #left_panel {
@@ -118,9 +125,12 @@ label {
   }
 
   label {
-    font-size: 12px;
+    font-size: 10px;
   }
   .window-body {
     font-size: 10px;
+  }
+  #about {
+    width: 25%;
   }
 }
