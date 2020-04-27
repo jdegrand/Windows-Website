@@ -59,3 +59,15 @@ button {
   /* font-size: 100px; */
   font-size: 16px;
 }
+
+@media screen and (max-device-width: 500px) and (orientation: portrait){
+  .files {
+    width: 100px;
+    top: 0;
+    padding: 8px;
+    display: flex;
+    align-items: stretch;
+    z-index: 10000;
+    background-color: #c4c485;
+  }
+}
