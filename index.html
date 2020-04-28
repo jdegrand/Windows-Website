@@ -91,6 +91,7 @@
                     <img src="folder.png" style="height: 100%; width: 100%;" />
                     <label class="pointer_cursor">Projects</label>
                 </div>
+
                 <div id="about" class="window draggable draggable_window">
                     <div class="title-bar draggable_bar">
                         <div class="title-bar-text">About Me</div>
@@ -101,8 +102,7 @@
                     <div class="window-body">
                         <div class="horizontal_window">
                             <div id="aboutImage" class="window_horizontal_image">
-                                <img onclick="prevDefault(event)" src="profile.jpeg"
-                                    style="max-width: 100%;" />
+                                <img onclick="prevDefault(event)" src="profile.jpeg" style="max-width: 100%;" />
                             </div>
                             <div style="margin-left: 10px; padding: 1rem; overflow-wrap: break-word;">
                                 <p>Hello! My name is Joey DeGrand. I am a 3rd year computer science student at Rochester
@@ -120,6 +120,7 @@
                         </section>
                     </div>
                 </div>
+
                 <div id="camagotchi" class="window draggable draggable_window" style="width: 23%; min-width: 184px;">
                     <div class="title-bar draggable_bar">
                         <div class="title-bar-text">Project - Camagotchi</div>
@@ -256,7 +257,6 @@
                                 <li>Click a folder name on the left to make all of its contents visible</li>
                                 <li>Double click a file name to position it on the top left of the desktop</li>
                             </ul>
-
                         </div>
                         <section class="field-row" style="justify-content: flex-end; clear: both;">
                             <button class="custom_button" onclick="closeWindow('aboutwebsite')">OK</button>
@@ -265,6 +265,7 @@
                 </div>
             </div>
         </div>
+    </div>
 </body>
 
 <script>
@@ -465,14 +466,18 @@
         document.getElementById(id).dataset.y = 0;
         document.getElementById(id).style.left = files_list_width + "px";
         document.getElementById(id).style.top = 0 + "px";
+        document.getElementById(id).style.right = "auto"
+        document.getElementById(id).style.bottom = "auto"
     }
-    
-    function reposition(element) {
+
+    function repositionElement(element) {
         element.style.transform = "translate(0px, 0px)";
         element.dataset.x = 0;
-        element.getElementById(id).dataset.y = 0;
-        element.getElementById(id).style.left = files_list_width + "px";
-        element.getElementById(id).style.top = 0 + "px";
+        element.dataset.y = 0;
+        element.style.left = files_list_width + "px";
+        element.style.top = 0 + "px";
+        element.style.right = "auto"
+        element.style.bottom = "auto"
     }
 
     function checkAllWindows() {
