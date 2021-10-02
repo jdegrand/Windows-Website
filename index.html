@@ -25,496 +25,379 @@
 </head>
 
 <body>
-    <div style="overflow: hidden; position: relative; height: 100%;">
-        <div style="display: flex; height: 100%; width: 100%;">
-            <div id="files_container">
-                <div id="files">
-                    <ul class="tree-view" id="left_panel" style="word-break: break-word;">
-                        <li data-windowid="about" class="window_title pointer_cursor" onclick="prevDefault(event)">
-                            <a>About
-                                Me</a></li>
-                        <li>
-                            <a class="pointer_cursor" onclick="showProjects()">Projects</a>
-                            <ul>
-                                <li data-windowid="camagotchi" class="window_title pointer_cursor"
-                                    onclick="prevDefault(event)">
-                                    <a>Camagotchi</a></li>
-                                <li><a>Joe Flo Party Mo</a></li>
-                                <li data-windowid="vlocchain" class="window_title pointer_cursor"
-                                    onclick="prevDefault(event)">
-                                    <a>VlocChain</a></li>
-                                <li data-windowid="quotebot" class="window_title pointer_cursor"
-                                    onclick="prevDefault(event)">
-                                    <a>QuoteBot</a></li>
-                                <li data-windowid="pixelartwatchos" class="window_title pointer_cursor"
-                                    onclick="prevDefault(event)"><a>PixelArtWatchOS</a></li>
-                            </ul>
-                        </li>
-                        <li><a>Work Experience</a></li>
-                        <li>
-                            <a>Extracurricular</a>
-                            <ul>
-                                <li><a>CSH</a></li>
-                                <li><a>Orientation Leader</a></li>
-                                <li><a>Computer Science Ambassador</a></li>
-                                <li><a>Intramurals</a></li>
-                            </ul>
-                        </li>
-                        <li data-windowid="aboutwebsite" class="window_title pointer_cursor"
-                            onclick="prevDefault(event)">
-                            <a>About This Site</a></li>
-                        <li><a>Contact</a></li>
-                        <li><a style="color: white; visibility: hidden;">Easter Egg ;)</a></li>
-                        <li><a class="pointer_cursor" onclick="hideAll()" style="color: darkred;">Hide All</a></li>
-                        <li id="lastTreeViewElement"><a class="pointer_cursor" onclick="showAll()"
-                                style="color: darkred;">Show
-                                All</a></li>
-                        <div id="social_bar"
-                            style="display: flex; justify-content: space-evenly; margin-bottom: auto; position: absolute; width: 100%; bottom: 0; margin-bottom: 10px;">
-                            <div onclick="window.open('https://www.linkedin.com/in/joe-degrand', '_blank');"><img
-                                    class="icon_link pointer_cursor" title="LinkedIn" src="linkedin_logo.png"
-                                    height=30 /></div>
-                            <div onclick="window.open('https://github.com/jdegrand', '_blank');"><img
-                                    class="icon_link pointer_cursor" title="GitGub" src="github_logo.png" height=30 />
-                            </div>
+    <div class="page-container">
+        <div id="files-container">
+            <div id="files">
+                <ul class="tree-view" id="left-panel" style="word-break: break-word;">
+                    <li data-windowid="about" class="window-title pointer-cursor" onclick="prevDefault(event)">
+                        <a>About Me</a></li>
+                    <li>
+                        <a class="pointer-cursor" onclick="showWorkExperiences()">Work Experience</a>
+                        <ul>
+                            <li data-windowid="intuitIntern" class="window-title pointer-cursor"
+                                onclick="prevDefault(event)">
+                                <a>Intuit (Intern)</a></li>
+                            <li data-windowid="sandbox" class="window-title pointer-cursor"
+                                onclick="prevDefault(event)">
+                                <a>SandBox Union</a></li>
+                            <li data-windowid="intuitCoop" class="window-title pointer-cursor"
+                                onclick="prevDefault(event)">
+                                <a>Intuit (Co-op)</a></li>
+                            <li data-windowid="chessHealth" class="window-title pointer-cursor"
+                                onclick="prevDefault(event)">
+                                <a>CHESS Health</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="pointer-cursor" onclick="showProjects()">Projects</a>
+                        <ul>
+                            <li data-windowid="camagotchi" class="window-title pointer-cursor"
+                                onclick="prevDefault(event)">
+                                <a>Camagotchi</a></li>
+                            <li data-windowid="vlocchain" class="window-title pointer-cursor"
+                                onclick="prevDefault(event)">
+                                <a>VlocChain</a></li>
+                            <li data-windowid="quotebot" class="window-title pointer-cursor"
+                                onclick="prevDefault(event)">
+                                <a>QuoteBot</a></li>
+                            <li data-windowid="pixelArtWatchOs" class="window-title pointer-cursor"
+                                onclick="prevDefault(event)"><a>PixelArtWatchOS</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>Extracurricular</a>
+                        <ul>
+                            <li><a>Orientation Leader</a></li>
+                            <li><a>Computer Science Ambassador</a></li>
+                            <li><a>CSH</a></li>
+                            <li><a>Intramurals</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>Other Sites</a>
+                        <ul>
+                            <li><a href="http://jive.jdegrand.me" target="_blank">Jive</a></li>
+                            <li><a href="http://seafoam.jdegrand.me" target="_blank">Seafoam</a></li>
+                        </ul>
+                    </li>
+                    <li data-windowid="aboutWebsite" class="window-title pointer-cursor"
+                        onclick="prevDefault(event)">
+                        <a>About This Site</a></li>
+                    <li><a>Contact</a></li>
+                    <li><a style="color: white; visibility: hidden;">Easter Egg ;)</a></li>
+                    <li><a class="pointer-cursor" onclick="hideAll()" style="color: darkred;">Hide All</a></li>
+                    <li id="lastTreeViewElement"><a class="pointer-cursor" onclick="showAll()" style="color: darkred;">Show All</a></li>
+                    <div id="social_bar"
+                        style="display: flex; justify-content: space-evenly; margin-bottom: auto; position: absolute; width: 100%; bottom: 0; margin-bottom: 10px;">
+                        <div onclick="window.open('https://www.linkedin.com/in/joe-degrand', '_blank');"><img
+                                class="icon-link pointer-cursor" title="LinkedIn" src="assets/linkedin_logo.png"
+                                height=30 /></div>
+                        <div onclick="window.open('https://github.com/jdegrand', '_blank');"><img
+                                class="icon-link pointer-cursor" title="GitGub" src="assets/github_logo.png" height=30 />
                         </div>
-                    </ul>
-                </div>
-                <div id="drawer_arrow">
-                    <div id="image_arrow">
-                        <img src="back_arrow.png" width=15 height="30">
                     </div>
+                </ul>
+            </div>
+            <div id="drawer-arrow">
+                <div id="image-arrow">
+                    <img src="assets/back_arrow.png" width=15 height="30">
                 </div>
             </div>
-            <div id="screen">
-                <div id="project_folder" class="click_projects pointer_cursor" onclick="prevDefault(event)">
-                    <img src="folder.png" style="height: 100%; width: 100%;" />
-                    <label class="pointer_cursor">Projects</label>
+        </div>
+        <div id="screen">
+            <div id="folders">
+                <div class="click-projects pointer-cursor folder" onclick="prevDefault(event)">
+                    <img src="assets/folder.png" style="height: 100%; width: 100%;" />
+                    <label class="pointer-cursor">Projects</label>
                 </div>
+                <div class="click-work-experiences pointer-cursor folder" onclick="prevDefault(event)">
+                    <img src="assets/folder.png" style="height: 100%; width: 100%;" />
+                    <label class="pointer-cursor">Work Exp...</label>
+                </div>
+            </div>
 
-                <div id="about" class="window draggable draggable_window">
-                    <div class="title-bar draggable_bar">
-                        <div class="title-bar-text">About Me</div>
-                        <div class="title-bar-controls">
-                            <button aria-label="Close" onclick="closeWindow('about')"></button>
-                        </div>
-                    </div>
-                    <div class="window-body">
-                        <div class="horizontal_window">
-                            <div id="aboutImage" class="window_horizontal_image">
-                                <img onclick="prevDefault(event)" src="profile.jpeg" style="max-width: 100%;" />
-                            </div>
-                            <div style="margin-left: 10px; padding: 1rem; overflow-wrap: break-word;">
-                                <p>Hello! My name is Joey DeGrand. I am a 3rd year computer science student at Rochester
-                                    Institute of Technology.</p>
-                                <p>I'm experienced in: Python, Java, C, Git</p>
-                                <p>I've dabbled with: React, HTML, CSS, mySQL, Flask, WebSockets</p>
-                                <p>Here are some courses I've taken:</p>
-                                <p></p>
-                                <p>Analysis Of Algorithms, Concepts Of Computer Systems, Mechanics Of Programming,
-                                    Principles Of Data Management, Programming Language Concepts, Graph Theory</p>
-                            </div>
-                        </div>
-                        <section class="field-row" style="justify-content: flex-end; clear: both;">
-                            <button class="custom_button" onclick="closeWindow('about')">OK</button>
-                        </section>
+            <div id="about" class="window draggable draggable-window">
+                <div class="title-bar draggable-bar">
+                    <div class="title-bar-text">About Me</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" onclick="closeWindow('about')"></button>
                     </div>
                 </div>
-
-                <div id="camagotchi" class="window draggable draggable_window" style="width: 23%; min-width: 184px;">
-                    <div class="title-bar draggable_bar">
-                        <div class="title-bar-text">Project - Camagotchi</div>
-                        <div class="title-bar-controls">
-                            <button aria-label="Close" onclick="closeWindow('camagotchi')"></button>
+                <div class="window-body">
+                    <div class="horizontal-window">
+                        <div id="about-image" class="window-horizontal-image">
+                            <img onclick="prevDefault(event)" src="assets/profile.jpeg" style="max-width: 100%;" />
+                        </div>
+                        <div style="margin-left: 10px; padding: 1rem; overflow-wrap: break-word;">
+                            <p>Hello! My name is Joey DeGrand. I am a 5th year Computer Science student at Rochester
+                                Institute of Technology.</p>
+                            <p>I'm experienced in: Angular, Python, Java, C, JavaScript, TypeScript, React, Git, HTML, CSS</p>
+                            <p>I've dabbled with: Node.js, Spring Boot, MySQL, MongoDB, GraphQL, Rust, Flask</p>
+                            <p>Here are some courses I've taken:</p>
+                            <p></p>
+                            <p>Analysis Of Algorithms, Concepts Of Computer Systems, Mechanics Of Programming,
+                                Principles Of Data Management, Programming Language Concepts, Graph Theory, 
+                                Introduction to Artificial Intelligence, Concepts of Paralell and Distributed Systems, 
+                                Graph Theory, Foundations of Computer Graphics</p>
                         </div>
                     </div>
-                    <div class="window-body">
+                    <section class="field-row" style="justify-content: flex-end; clear: both;">
+                        <button class="custom-button" onclick="closeWindow('about')">OK</button>
+                    </section>
+                </div>
+            </div>
+
+            <div id="camagotchi" class="window draggable draggable-window" style="width: 23%; min-width: 184px;">
+                <div class="title-bar draggable-bar">
+                    <div class="title-bar-text">Project - Camagotchi</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" onclick="closeWindow('camagotchi')"></button>
+                    </div>
+                </div>
+                <div class="window-body">
+                    <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
+                        <div style="width: 100%; text-align: center;">
+                            <img src="assets/camagotchi.png" style="max-width: 80%;" />
+                        </div>
+                        <p id="test">A remake of the famous Tamagotchi toy, the digital pet simulator, written in C.
+                            The
+                            program utilizes the
+                            ncurses and multithreading libraries to recreate this experience. Future plans include
+                            3D
+                            printing a case
+                            and attaching a screen and buttons to work with the program.</p>
+                        <p>Spring 2019</p>
+                        <a href="https://github.com/jdegrand/Camagotchi" target="_blank">GitHub</a>
+                    </div>
+                    <section class="field-row" style="justify-content: flex-end">
+                        <button class="custom-button" onclick="closeWindow('camagotchi')">Cool</button>
+                    </section>
+                </div>
+            </div>
+
+            <div id="vlocchain" class="window draggable draggable-window" style="width: 25%; min-width: 184px;">
+                <div class="title-bar draggable-bar">
+                    <div class="title-bar-text">Project - VlocChain</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" onclick="closeWindow('vlocchain')"></button>
+                    </div>
+                </div>
+                <div class="window-body">
+                    <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
+                        <div style="width: 100%; text-align: center;">
+                            <img src="assets/vlocc.png" style="max-width: 80%;" />
+                        </div>
+                        <p>A project started at a hackathon that two other students and I continued to work on
+                            afterward. Utilizes the idea of blockchain technology with video sharing. My part of the
+                            project included all of the UI, setting up and using a database with mySQL, Flask API,
+                            and
+                            creating a custom web video player.</p>
+                        <p>Spring 2018</p>
+                        <a href="https://github.com/VlocC/VlocChain-0.0" target="_blank">GitHub</a>
+                    </div>
+                    <section class="field-row" style="justify-content: flex-end">
+                        <button class="custom-button" onclick="closeWindow('vlocchain')">Sick!</button>
+                    </section>
+                </div>
+            </div>
+
+            <div id="quotebot" class="window draggable draggable-window">
+                <div class="title-bar draggable-bar">
+                    <div class="title-bar-text">Project - QuoteBot</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" onclick="closeWindow('quotebot')"></button>
+                    </div>
+                </div>
+                <div class="window-body">
+                    <div class="horizontal-window">
+                        <div id="quotebot-image" class="window-horizontal-image">
+                            <img src="assets/telegram_logo.png" style="max-width: 100%;" />
+                        </div>
                         <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
-                            <div style="width: 100%; text-align: center;">
-                                <img src="camagotchi.png" style="max-width: 80%;" />
-                            </div>
-                            <p id="test">A remake of the famous Tamagotchi toy, the digital pet simulator, written in C.
-                                The
-                                program utilizes the
-                                ncurses and multithreading libraries to recreate this experience. Future plans include
-                                3D
-                                printing a case
-                                and attaching a screen and buttons to work with the program.</p>
-                            <p>Spring 2019</p>
-                            <a href="https://github.com/jdegrand/Camagotchi" target="_blank">GitHub</a>
+                            <p>A bot for the Telegram messaging app that stores quotes, pictures, and other small
+                                features. This is connected to public Telegram API and running on a Raspberry Pi.
+                            </p>
+                            <p>Fall 2018</p>
+                            <a href="https://github.com/jdegrand/QuoteBot" target="_blank">GitHub</a>
                         </div>
-                        <section class="field-row" style="justify-content: flex-end">
-                            <button class="custom_button" onclick="closeWindow('camagotchi')">Cool</button>
-                        </section>
+                    </div>
+                    <section class="field-row" style="justify-content: flex-end; clear: both;">
+                        <button class="custom-button" onclick="closeWindow('quotebot')">OK!</button>
+                    </section>
+                </div>
+            </div>
+
+            <div id="pixelArtWatchOs" class="window draggable draggable-window"
+                style="width: 25%; min-width: 184px; visibility: hidden;">
+                <div class="title-bar draggable-bar">
+                    <div class="title-bar-text">Project - PixelArtWatchOS</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" onclick="closeWindow('pixelArtWatchOs')"></button>
                     </div>
                 </div>
-
-                <div id="vlocchain" class="window draggable draggable_window" style="width: 25%; min-width: 184px;">
-                    <div class="title-bar draggable_bar">
-                        <div class="title-bar-text">Project - VlocChain</div>
-                        <div class="title-bar-controls">
-                            <button aria-label="Close" onclick="closeWindow('vlocchain')"></button>
+                <div class="window-body">
+                    <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
+                        <div style="width: 100%; text-align: center;">
+                            <img src="assets/pixel.png" style="max-width: 80%;" />
                         </div>
+                        <p>A project started at YHack 2019, a watchOS app where you can create pixel art right from
+                            your
+                            wrist! You can select a color from the presets in color bar by tapping or scrolling
+                            through them
+                            all with Apple Watch's digital crown. Also includes a much needed eraser tool!
+                            Implemented with
+                            Swift and SwiftUI.
+                            <p>Fall 2019</p>
+                            <a href="https://github.com/jdegrand/PixelArtWatchOS" target="_blank">GitHub</a>
                     </div>
-                    <div class="window-body">
-                        <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
-                            <div style="width: 100%; text-align: center;">
-                                <img src="vlocc.png" style="max-width: 80%;" />
-                            </div>
-                            <p>A project started at a hackathon that two other students and I continued to work on
-                                afterward. Utilizes the idea of blockchain technology with video sharing. My part of the
-                                project included all of the UI, setting up and using a database with mySQL, Flask API,
-                                and
-                                creating a custom web video player.</p>
-                            <p>Spring 2018</p>
-                            <a href="https://github.com/VlocC/VlocChain-0.0" target="_blank">GitHub</a>
-                        </div>
-                        <section class="field-row" style="justify-content: flex-end">
-                            <button class="custom_button" onclick="closeWindow('vlocchain')">Sick!</button>
-                        </section>
+                    <section class="field-row" style="justify-content: flex-end">
+                        <button class="custom-button" onclick="closeWindow('pixelArtWatchOs')">Wow!</button>
+                    </section>
+                </div>
+            </div>
+
+            <div id="aboutWebsite" class="window draggable draggable-window"
+                style="width: 50%; z-index: 10; visibility: hidden;">
+                <div class="title-bar draggable-bar">
+                    <div class="title-bar-text">About Website</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" onclick="closeWindow('aboutWebsite')"></button>
                     </div>
                 </div>
-
-                <div id="quotebot" class="window draggable draggable_window">
-                    <div class="title-bar draggable_bar">
-                        <div class="title-bar-text">Project - QuoteBot</div>
-                        <div class="title-bar-controls">
-                            <button aria-label="Close" onclick="closeWindow('quotebot')"></button>
-                        </div>
+                <div class="window-body">
+                    <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
+                        <p>Joey DeGrand's Personal Website</p>
+                        <p>This old-fashioned Windows themed website is a website about me, Joey DeGrand, created
+                            for fun to
+                            learn more about web development in general and to display my experiences/interests. It
+                            utilizes
+                            a style library <a href="https://jdan.github.io/98.css/" target="_blank">98.css</a> to
+                            make the
+                            pop-ups look as they did on Windows 98.</p>
+                        <p>Here are some features of this site:</p>
+                        <ul>
+                            <li>Click the 'OK' button on the bottom of a window to dismiss it</li>
+                            <li>Click a file name on the left to bring that window to the front of the page or
+                                reopen the
+                                window if it is closed</li>
+                            <li>Click a folder name on the left to make all of its contents visible</li>
+                            <li>Double click a file name to position it on the top left of the desktop</li>
+                        </ul>
                     </div>
-                    <div class="window-body">
-                        <div class="horizontal_window">
-                            <div id="quotebotImage" class="window_horizontal_image">
-                                <img src="telegram_logo.png" style="max-width: 100%;" />
-                            </div>
-                            <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
-                                <p>A bot for the Telegram messaging app that stores quotes, pictures, and other small
-                                    features. This is connected to public Telegram API and running on a Raspberry Pi.
-                                </p>
-                                <p>Fall 2018</p>
-                                <a href="https://github.com/jdegrand/QuoteBot" target="_blank">GitHub</a>
-                            </div>
-                        </div>
-                        <section class="field-row" style="justify-content: flex-end; clear: both;">
-                            <button class="custom_button" onclick="closeWindow('quotebot')">OK</button>
-                        </section>
+                    <section class="field-row" style="justify-content: flex-end; clear: both;">
+                        <button class="custom-button" onclick="closeWindow('aboutWebsite')">OK</button>
+                    </section>
+                </div>
+            </div>
+
+            <div id="chessHealth" class="window draggable draggable-window">
+                <div class="title-bar draggable-bar">
+                    <div class="title-bar-text">Work - CHESS Health Solutions</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" onclick="closeWindow('chessHealth')"></button>
                     </div>
                 </div>
-
-                <div id="pixelartwatchos" class="window draggable draggable_window"
-                    style="width: 25%; min-width: 184px; visibility: hidden;">
-                    <div class="title-bar draggable_bar">
-                        <div class="title-bar-text">Project - PixelArtWatchOS</div>
-                        <div class="title-bar-controls">
-                            <button aria-label="Close" onclick="closeWindow('pixelartwatchos')"></button>
+                <div class="window-body">
+                    <div class="chess-body">
+                        <div class="window-horizontal-image horizontal-image" style="margin-top: 12px;">
+                            <img onclick="prevDefault(event)" src="assets/chessHealth.png" style="max-width: 100%;"/>
+                        </div>
+                        <div style="margin-left: 10px; padding: 1rem; overflow-wrap: break-word;">
+                            <p>January 2020 - May 2020</p>
+                            <div>• Contributed to the company’s Android applications, a lof which strive to help users with addiction recovery</div>
+                            <div>• Used Android Studio with Java and XML</div>
+                            <div>• Learned how implement UI in a way that worked across various types of phones and versions of Android</div>
+                            <p><a href="https://www.chess.health" target="_blank">CHESS Health Solutions</a></p>
                         </div>
                     </div>
-                    <div class="window-body">
-                        <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
-                            <div style="width: 100%; text-align: center;">
-                                <img src="pixel.png" style="max-width: 80%;" />
-                            </div>
-                            <p>A project started at YHack 2019, a watchOS app where you can create pixel art right from
-                                your
-                                wrist! You can select a color from the presets in color bar by tapping or scrolling
-                                through them
-                                all with Apple Watch's digital crown. Also includes a much needed eraser tool!
-                                Implemented with
-                                Swift and SwiftUI.
-                                <p>Fall 2019</p>
-                                <a href="https://github.com/jdegrand/PixelArtWatchOS" target="_blank">GitHub</a>
-                        </div>
-                        <section class="field-row" style="justify-content: flex-end">
-                            <button class="custom_button" onclick="closeWindow('pixelartwatchos')">Wow!</button>
-                        </section>
+                    <section class="field-row" style="justify-content: flex-end; clear: both;">
+                        <button class="custom-button" onclick="closeWindow('chessHealth')">Great!</button>
+                    </section>
+                </div>
+            </div>
+
+            <div id="intuitCoop" class="window draggable draggable-window">
+                <div class="title-bar draggable-bar">
+                    <div class="title-bar-text">Work - Intuit (Co-op)</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" onclick="closeWindow('intuitCoop')"></button>
                     </div>
                 </div>
+                <div class="window-body">
+                    <div class="intuit-body">
+                        <div class="window-horizontal-image horizontal-image">
+                            <img onclick="prevDefault(event)" src="assets/intuit.png" style="max-width: 100%;"/>
+                        </div>
+                        <div style="margin-left: 10px; padding: 1rem; overflow-wrap: break-word;">
+                            <p>May 2020 - December 2020</p>
+                            <div>• Worked on Intuit’s Identity Platform Team using Java and Wavefront</div>
+                            <div>• Extended an internal tool that pulls useful metrics from various services into a single dashboard to be used daily by Intuit’s Identity Team</div>
+                            <div>• Participated in Intuit’s Global Engineering Week, where I worked with a new team to fix several addresd validation issues customers were experiencing</div>
+                            <p><a href="https://www.intuit.com/" target="_blank">Intuit</a></p>
+                        </div>
+                    </div>
+                    <section class="field-row" style="justify-content: flex-end; clear: both;">
+                        <button class="custom-button" onclick="closeWindow('intuitCoop')">Epic!</button>
+                    </section>
+                </div>
+            </div>
 
-                <div id="aboutwebsite" class="window draggable draggable_window"
-                    style="width: 50%; z-index: 10; visibility: hidden;">
-                    <div class="title-bar draggable_bar">
-                        <div class="title-bar-text">About Website</div>
-                        <div class="title-bar-controls">
-                            <button aria-label="Close" onclick="closeWindow('aboutwebsite')"></button>
+            <div id="sandbox" class="window draggable draggable-window">
+                <div class="title-bar draggable-bar">
+                    <div class="title-bar-text">Work - SandBox Union</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" onclick="closeWindow('sandbox')"></button>
+                    </div>
+                </div>
+                <div class="window-body">
+                    <div class="chess-body">
+                        <div class="window-horizontal-image horizontal-image" style="margin-top: 12px; padding: 10px; background-color: black; border-radius: 14px;">
+                            <img onclick="prevDefault(event)" src="assets/sandbox.png" style="max-width: 100%;"/>
+                        </div>
+                        <div style="margin-left: 10px; padding: 1rem; overflow-wrap: break-word;">
+                            <p>January 2020 - May 2020</p>
+                            <div>• Contributed to the company’s Android applications, a lof which strive to help users with addiction recovery</div>
+                            <div>• Used Android Studio with Java and XML</div>
+                            <div>• Learned how implement UI in a way that worked across various types of phones and versions of Android</div>
+                            <p><a href="https://sandboxunion.com/" target="_blank">SandBox Union</a></p>
                         </div>
                     </div>
-                    <div class="window-body">
-                        <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
-                            <p>Joey DeGrand's Personal Website</p>
-                            <p>This old-fashioned Windows themed website is a website about me, Joey DeGrand, created
-                                for fun to
-                                learn more about web development in general and to display my experiences/interests. It
-                                utilizes
-                                a style library <a href="https://jdan.github.io/98.css/" target="_blank">98.css</a> to
-                                make the
-                                pop-ups look as they did on Windows 98.</p>
-                            <p>Here are some features of this site:</p>
-                            <ul>
-                                <li>Click the 'OK' button on the bottom of a window to dismiss it</li>
-                                <li>Click a file name on the left to bring that window to the front of the page or
-                                    reopen the
-                                    window if it is closed</li>
-                                <li>Click a folder name on the left to make all of its contents visible</li>
-                                <li>Double click a file name to position it on the top left of the desktop</li>
-                            </ul>
-                        </div>
-                        <section class="field-row" style="justify-content: flex-end; clear: both;">
-                            <button class="custom_button" onclick="closeWindow('aboutwebsite')">OK</button>
-                        </section>
+                    <section class="field-row" style="justify-content: flex-end; clear: both;">
+                        <button class="custom-button" onclick="closeWindow('sandbox')">Yo!</button>
+                    </section>
+                </div>
+            </div>
+
+            <div id="intuitIntern" class="window draggable draggable-window">
+                <div class="title-bar draggable-bar">
+                    <div class="title-bar-text">Work - Intuit (Intern)</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" onclick="closeWindow('intuitIntern')"></button>
                     </div>
+                </div>
+                <div class="window-body">
+                    <div class="intuit-body">
+                        <div class="window-horizontal-image horizontal-image">
+                            <img onclick="prevDefault(event)" src="assets/intuit.png" style="max-width: 100%;"/>
+                        </div>
+                        <div style="margin-left: 10px; padding: 1rem; overflow-wrap: break-word;">
+                            <p>May 2021 - August 2021</p>
+                            <div>• Worked on a dashboard to track statuses of pull requests with important updates to internal repositories, to be used by Program Managers</div>
+                            <div>• Created the entire front-end in React and connected it to the backend</div>
+                            <div>• Wrote backend in Java Spring which involved creating Java and GraphQL models, mutations, and queries and connecting to a MongoDB cluster. Also pulled data from GitHub and AWS Athena</div>
+                            <div>• Learned how to write effective Mockito unit tests and how to architect my code in a readable and maintainable fashion</div>
+                            <p><a href="https://www.intuit.com/" target="_blank">Intuit</a></p>
+                        </div>
+                    </div>
+                    <section class="field-row" style="justify-content: flex-end; clear: both;">
+                        <button class="custom-button" onclick="closeWindow('intuitIntern')">Sweet!</button>
+                    </section>
                 </div>
             </div>
         </div>
     </div>
 </body>
 
-<script>
-    var currentIndex = 11;
-    var initialScreenSize;
-    var initialScreenSizeHeight;
-
-    var about = document.getElementById("about");
-    var camagotchi = document.getElementById("camagotchi");
-    var vlocchain = document.getElementById("vlocchain");
-    var quotebot = document.getElementById("quotebot");
-    var pixelartwatchos = document.getElementById("pixelartwatchos");
-    var aboutwebsite = document.getElementById("aboutwebsite");
-
-
-    var all_windows = [about, camagotchi, vlocchain, quotebot, pixelartwatchos, aboutwebsite];
-    var projects = [camagotchi, vlocchain, quotebot, pixelartwatchos];
-    var files_list_width;
-    var isMobile = false;
-    if (window.innerWidth > 500) {
-        files_list_width = 216;
-    } else {
-        files_list_width = 0;
-        isMobile = true;
-    }
-
-    window.onorientationchange = function () {
-        if (window.innerWidth > 500) {
-            files_list_width = 216;
-        } else {
-            files_list_width = 0;
-        }
-        checkAllWindows();
-    }
-
-    window.onload = function () {
-        initialScreenSize = window.innerWidth;
-        initialScreenSizeHeight = window.innerHeight;
-
-        // about.style.left = "230px";
-        about.style.left = files_list_width + 10 + "px";
-        about.style.top = "26px";
-        camagotchi.style.left = about.getBoundingClientRect().right + 42 + "px";
-        camagotchi.style.top = 16 + "px";
-        vlocchain.style.left = about.getBoundingClientRect().left + 50 + "px";
-        vlocchain.style.top = about.getBoundingClientRect().bottom + 15 + "px";
-        quotebot.style.left = vlocchain.getBoundingClientRect().right + 15 + "px";
-        quotebot.style.top = about.getBoundingClientRect().bottom + 100 + "px";
-        pixelartwatchos.style.left = vlocchain.getBoundingClientRect().right + 15 + "px";
-        pixelartwatchos.style.top = 50 + "px";
-        aboutwebsite.style.left = files_list_width + 10 + "px";
-        aboutwebsite.style.bottom = 10 + "px";
-    };
-
-    function closeWindow(id) {
-        document.getElementById(id).style.visibility = "hidden";
-    }
-
-    function openWindow(id) {
-        document.getElementById(id).style.visibility = "visible";
-        bringToFront(id);
-    }
-
-    function bringToFront(id) {
-        document.getElementById(id).style.zIndex = currentIndex;
-        currentIndex += 1;
-    }
-
-    function bringElementToFront(elmnt) {
-        elmnt.style.zIndex = currentIndex;
-        currentIndex += 1;
-    }
-
-    function sortBySize(x, y) {
-        if ((x.offsetWidth * x.offsetHeight) < (y.offsetWidth * y.offsetHeight)) {
-            return 1;
-        }
-        if ((x.offsetWidth * x.offsetHeight) > (y.offsetWidth * y.offsetHeight)) {
-            return -1;
-        }
-        return 0;
-    }
-
-    function showAll() {
-        all_windows.sort(sortBySize);
-        for (const elm of all_windows) {
-            elm.style.zIndex = currentIndex;
-            elm.style.visibility = "visible"
-            currentIndex += 1;
-        }
-    }
-
-    function hideAll() {
-        for (const elm of all_windows) {
-            elm.style.visibility = "hidden"
-        }
-    }
-
-    function showProjects() {
-        projects.sort(sortBySize);
-        for (const elm of projects) {
-            elm.style.zIndex = currentIndex;
-            elm.style.visibility = "visible"
-            currentIndex += 1;
-        }
-    }
-
-    function getBoundries(x, y, element) {
-        var end = window.innerWidth;
-        var height = window.innerHeight;
-        return { left: files_list_width, right: end, top: 0, bottom: height }
-    }
-
-    interact('.draggable')
-        .draggable({
-            modifiers: [
-                interact.modifiers.restrictRect({
-                    restriction: getBoundries,
-                    elementRect: { left: 0, right: 0.5, top: 0, bottom: 0.5 },
-                    endOnly: false
-                })
-            ],
-            autoScroll: false,
-
-            listeners: {
-                // call this function on every dragmove event
-                move: dragMoveListener,
-
-                // call this function on every dragend event
-                end(event) {
-                    if (isMobile) {
-                        document.getElementById('files_container').style.opacity = 1;
-                    }
-                }
-            }
-        })
-        .styleCursor(false)
-        .on('tap', function (event) {
-            bringElementToFront(event.currentTarget)
-            event.preventDefault()
-
-        })
-
-    function dragMoveListener(event) {
-        var target = event.target
-        bringElementToFront(target)
-        // keep the dragged position in the data-x/data-y attributes
-        var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
-        var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
-
-        // translate the element
-        target.style.webkitTransform =
-            target.style.transform =
-            'translate(' + x + 'px, ' + y + 'px)'
-        if (isMobile) {
-            document.getElementById('files_container').style.opacity = 0.25;
-        }
-        // update the posiion attributes
-        target.setAttribute('data-x', x)
-        target.setAttribute('data-y', y)
-    }
-
-    // this function is used later in the resizing and gesture demos
-    window.dragMoveListener = dragMoveListener
-
-    function prevDefault(event) {
-        event.preventDefault()
-    }
-
-    interact('.click_projects')
-        .on('tap', function (event) {
-            event.preventDefault()
-        })
-        .on('doubletap', function (event) {
-            showProjects()
-            event.preventDefault()
-        })
-        .on('hold', function (event) {
-
-        })
-
-    interact('.window_title')
-        .on('tap', function (event) {
-            openWindow(event.currentTarget.dataset.windowid);
-            event.preventDefault();
-        })
-        .on('doubletap', function (event) {
-            reposition(event.currentTarget.dataset.windowid);
-            event.preventDefault();
-        })
-        .on('hold', function (event) {
-
-        })
-
-    function reposition(id) {
-        document.getElementById(id).style.transform = "translate(0px, 0px)";
-        document.getElementById(id).dataset.x = 0;
-        document.getElementById(id).dataset.y = 0;
-        document.getElementById(id).style.left = files_list_width + "px";
-        document.getElementById(id).style.top = 0 + "px";
-        document.getElementById(id).style.right = "auto"
-        document.getElementById(id).style.bottom = "auto"
-    }
-
-    function repositionElement(element) {
-        element.style.transform = "translate(0px, 0px)";
-        element.dataset.x = 0;
-        element.dataset.y = 0;
-        element.style.left = files_list_width + "px";
-        element.style.top = 0 + "px";
-        element.style.right = "auto"
-        element.style.bottom = "auto"
-    }
-
-    function checkAllWindows() {
-        for (const elm of all_windows) {
-            if ((elm.style.left > window.innerWidth) || (elm.style.bottom > window.innerHeight)) {
-                repositionElement(elm);
-            }
-        }
-    }
-
-
-    window.onresize = checkCollision;
-    function checkCollision() {
-        var t = document.getElementById('lastTreeViewElement').getBoundingClientRect();
-        var s = document.getElementById('social_bar').getBoundingClientRect();
-        if (s.top < t.bottom) {
-            document.getElementById('social_bar').style.visibility = "hidden";
-        } else {
-            document.getElementById('social_bar').style.visibility = "visible";
-        }
-    }
-
-    var filesOffScreen = true;
-
-    interact('#image_arrow')
-        .on('tap', function (event) {
-            document.getElementById('files_container').style.left = 0 + "px";
-            if (filesOffScreen) {
-                document.getElementById('files_container').style.left = 0 + "px";
-                filesOffScreen = false;
-            } else {
-                document.getElementById('files_container').style.left = -116 + "px";
-                filesOffScreen = true;
-            }
-            event.preventDefault()
-        });
-
-</script>
+<script src="index.js"></script>
 
 </html>
