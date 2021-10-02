@@ -44,7 +44,7 @@ window.onload = function () {
     initialScreenSizeHeight = window.innerHeight;
 
     about.style.left = filesListWidth + 10 + "px";
-    about.style.top = "26px";
+    about.style.top = "10px";
     camagotchi.style.left = about.getBoundingClientRect().right + 42 + "px";
     camagotchi.style.top = 16 + "px";
     vlocchain.style.left = about.getBoundingClientRect().left + 50 + "px";
@@ -55,6 +55,14 @@ window.onload = function () {
     pixelArtWatchOs.style.top = 50 + "px";
     aboutWebsite.style.left = filesListWidth + 10 + "px";
     aboutWebsite.style.bottom = 10 + "px";
+    chessHealth.style.left = filesListWidth + 40 + "px";
+    chessHealth.style.top = 24 + "px";
+    intuitCoop.style.right = 40 + "px";
+    intuitCoop.style.top = 16 + "px";
+    sandbox.style.right = 20 + "px";
+    sandbox.style.bottom = 10 + "px"
+    intuitIntern.style.left = filesListWidth + 16 + "px";
+    intuitIntern.style.bottom = -120 + "px";
 };
 
 function closeWindow(id) {

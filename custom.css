@@ -17,6 +17,11 @@ a:hover {
 #intuitIntern, #intuitCoop {
   width: 50%;
   max-width: 400px;
+  z-index: 12;
+}
+
+#sandbox {
+  z-index: 11;
 }
 
 .draggable-bar {
@@ -120,7 +125,7 @@ button {
 }
 
 .folder {
-  width: 75px;
+    width: 75px;
 }
 
 label {
