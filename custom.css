@@ -71,7 +71,7 @@ body {
 
 button {
   cursor: url("assets/mouse_default.png"), default;
-  colorr: black;
+  color: black;
 }
 
 .icon-link {
